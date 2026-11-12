@@ -157,3 +157,16 @@ function subirGuiones() {
   });
   Logger.log(out.join(' | ')); return out;
 }
+
+// Infografías de las sesiones en directo de M2, M3 y M4.
+function subirImagenesSesiones() {
+  var c = DriveApp.getFoldersByName('Español Online B1 · Click & Learn · Documentos').next();
+  var base = 'https://raw.githubusercontent.com/YULIETH06/click-and-learn-ele-b1/main/assets/img/';
+  var out = [];
+  [['m2-sesiones.png', 'M2 · Sesiones en directo.png'], ['m3-sesiones.png', 'M3 · Sesiones en directo.png'], ['m4-sesiones.png', 'M4 · Sesiones en directo.png']].forEach(function (f) {
+    var it = c.getFilesByName(f[1]); var file = it.hasNext() ? it.next() : c.createFile(UrlFetchApp.fetch(base + f[0]).getBlob().setName(f[1]));
+    file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+    out.push(f[0] + ' ' + file.getId());
+  });
+  Logger.log(out.join(' | ')); return out;
+}
