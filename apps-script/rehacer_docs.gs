@@ -149,8 +149,8 @@ function subirGuiones() {
   [['guion_m1.pdf', 'M1 · Guion del vídeo ¿Cómo era tu vida antes?.pdf'], ['guion_m3.pdf', 'M3 · Guion del vídeo El escenario y la acción.pdf'], ['M1_Quizlet.txt', null]].forEach(function (f) {
     if (!f[1]) { // actualizar el archivo de importación de Quizlet M1
       var imp = raiz.getFoldersByName('4. Archivos de importación (Quizlet y Kahoot)').next();
-      var it = imp.getFilesByName('M1_Quizlet.txt'); while (it.hasNext()) it.next().setTrashed(true);
-      imp.createFile(UrlFetchApp.fetch(base + f[0]).getBlob().setName('M1_Quizlet.txt')); return;
+      var it = imp.getFilesByName('M1_Quizlet.txt');
+      if (it.hasNext()) it.next().setContent(UrlFetchApp.fetch(base + f[0]).getContentText('UTF-8')); return;
     }
     var it2 = c.getFilesByName(f[1]); var file = it2.hasNext() ? it2.next() : c.createFile(UrlFetchApp.fetch(base + f[0]).getBlob().setName(f[1]));
     out.push(f[0] + ' ' + file.getId());
