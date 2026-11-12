@@ -95,3 +95,47 @@ function actualizarVideos() {
   Logger.log(out.join('\n'));
   return out;
 }
+
+// Carpeta compartida de recursos del curso (enlace para la tesis).
+function crearCarpetaRecursos() {
+  var nombre = 'Español Online B1 · Click & Learn · Recursos';
+  var it = DriveApp.getFoldersByName(nombre);
+  var raiz = it.hasNext() ? it.next() : DriveApp.createFolder(nombre);
+  function sub(n) { var i = raiz.getFoldersByName(n); return i.hasNext() ? i.next() : raiz.createFolder(n); }
+  function existe(c, n) { return c.getFilesByName(n).hasNext(); }
+  var base = 'https://raw.githubusercontent.com/YULIETH06/click-and-learn-ele-b1/main/recursos/';
+  var fichas = sub('1. Fichas del alumno (sin soluciones)');
+  [['1dxp7vEC22HeAMwn8-e8Ybjkbd0Umf6WkB5Taf0rpE9s', 'M2 · Banco de conectores'], ['1vvSqOFNEh7R2gXYd0I2YIoeVP_A19jE_eCPDqSYP1Qw', 'M2 · Ficha de práctica de conectores'],
+   ['1NOzcOj41wShUJFufdTXjsFCqHDMhLCa_1Wkiz1ljW3M', 'M3 · Ficha de refuerzo del pluscuamperfecto'], ['1BRXUgHD_6eWWR39t9I7LBBSCiiCghFm2r4OVwZ9U_bI', 'M3 · Revisión entre compañeros'],
+   ['1jC4szvjVF974lNUFBGJHo2zwLYGe-SC2hIsSmcQtuSQ', 'M4 · Plantilla de planificación del proyecto'], ['1MivBrzExy3SrV41wOrnvtpFHWI_5OF79UsROlh5Sb5g', 'Diario de aprendizaje']].forEach(function (d) {
+    if (!existe(fichas, d[1] + '.pdf')) fichas.createFile(DriveApp.getFileById(d[0]).getAs('application/pdf').setName(d[1] + '.pdf'));
+  });
+  var info = sub('2. Infografías');
+  [['infografia_1_imperfecto.png', 'M1 · El pretérito imperfecto.png'], ['infografia_2_ya_no_todavia.png', 'M1 · Ya no y todavía.png'], ['infografia_3_conectores.png', 'M2 · Banco de conectores.png'], ['infografia_4_escenario_accion.png', 'M3 · Escenario y acción.png']].forEach(function (f) {
+    if (!existe(info, f[1])) info.createFile(UrlFetchApp.fetch(base + f[0]).getBlob().setName(f[1]));
+  });
+  var pres = sub('3. Vídeos y presentaciones');
+  [['carnaval.pptx', 'M4 · El Carnaval de Barranquilla (presentación).pptx'], ['carnaval.pdf', 'M4 · El Carnaval de Barranquilla (presentación).pdf']].forEach(function (f) {
+    if (!existe(pres, f[1])) pres.createFile(UrlFetchApp.fetch(base + f[0]).getBlob().setName(f[1]));
+  });
+  [['1DVQmF9xt4jrtiBxd56WgSdG5r5yBGJTQ', 'M1'], ['1FeETdqSYoXwRNqs7ClGQm3DrLVU_-GLk', 'M3'], ['1KyPjnl-BjEBGKVxMVehFXzcz7OKVR7uJ', 'B']].forEach(function (v) {
+    var f = DriveApp.getFileById(v[0]); if (!existe(pres, f.getName())) pres.createShortcut(v[0]);
+  });
+  var imp = sub('4. Archivos de importación (Quizlet y Kahoot)');
+  ['M1_Quizlet.txt', 'M3_Quizlet.txt', 'M4_Quizlet.txt', 'M3_Kahoot.xlsx'].forEach(function (n) {
+    if (!existe(imp, n)) imp.createFile(UrlFetchApp.fetch(base + n).getBlob().setName(n));
+  });
+  raiz.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+  Logger.log(raiz.getUrl());
+  return raiz.getUrl();
+}
+
+// Manda a la papelera solo la carpeta de formularios duplicada creada hoy por error.
+function papeleraFormulariosDuplicados() {
+  var out = [], it = DriveApp.getFoldersByName('Español Online B1 · Click & Learn · Formularios');
+  var hoy = new Date(2026, 10, 12, 8, 0, 0);
+  while (it.hasNext()) { var f = it.next();
+    if (f.getDateCreated() > hoy) { var fs = f.getFiles(); while (fs.hasNext()) { var x = fs.next(); x.setTrashed(true); out.push(x.getName()); } f.setTrashed(true); out.push('carpeta duplicada en la papelera'); }
+    else out.push('original conservada (' + f.getDateCreated() + ')'); }
+  Logger.log(out.join(' | ')); return out;
+}
