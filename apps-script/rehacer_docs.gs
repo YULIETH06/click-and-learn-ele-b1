@@ -12,8 +12,8 @@ function rehacerDocs() {
   function p(b, txt) { var x = b.appendParagraph(txt); x.setHeading(DocumentApp.ParagraphHeading.NORMAL); x.editAsText().setFontFamily('Nunito').setFontSize(11.5).setBold(false).setItalic(false).setForegroundColor('#26304A'); return x; }
   function tabla(b, filas, color) {
     var tb = b.appendTable(filas); tb.setBorderColor('#E4DCCD');
-    for (var j = 0; j < filas[0].length; j++) { tb.getCell(0, j).setBackgroundColor(color).editAsText().setBold(true).setForegroundColor('#FFFFFF').setFontFamily('Nunito').setFontSize(11); }
-    for (var i = 1; i < filas.length; i++) for (var k = 0; k < filas[i].length; k++) { var c = tb.getCell(i, k); c.editAsText().setFontFamily('Nunito').setFontSize(11).setBold(false).setForegroundColor('#26304A'); c.setPaddingTop(6).setPaddingBottom(6); if (i % 2 == 0) c.setBackgroundColor('#FBF7F0'); }
+    for (var j = 0; j < filas[0].length; j++) { tb.getCell(0, j).setBackgroundColor(color).editAsText().setBold(true).setItalic(false).setForegroundColor('#FFFFFF').setFontFamily('Nunito').setFontSize(11); }
+    for (var i = 1; i < filas.length; i++) for (var k = 0; k < filas[i].length; k++) { var c = tb.getCell(i, k); c.editAsText().setFontFamily('Nunito').setFontSize(11).setBold(false).setItalic(false).setForegroundColor('#26304A'); c.setPaddingTop(6).setPaddingBottom(6); if (i % 2 == 0) c.setBackgroundColor('#FBF7F0'); }
     return tb;
   }
   // M2.3 Banco de conectores
