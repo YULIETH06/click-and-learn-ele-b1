@@ -79,3 +79,19 @@ function rehacerDocs() {
   d.saveAndClose();
   return 'ok';
 }
+
+// Sustituye el contenido de los vídeos en Drive sin cambiar el enlace.
+function actualizarVideos() {
+  var base = 'https://raw.githubusercontent.com/YULIETH06/click-and-learn-ele-b1/main/assets/videos/';
+  var lista = [['m1.mp4', '1DVQmF9xt4jrtiBxd56WgSdG5r5yBGJTQ'], ['m3.mp4', '1FeETdqSYoXwRNqs7ClGQm3DrLVU_-GLk']];
+  var out = [];
+  lista.forEach(function (v) {
+    var blob = UrlFetchApp.fetch(base + v[0]).getBlob();
+    var r = UrlFetchApp.fetch('https://www.googleapis.com/upload/drive/v3/files/' + v[1] + '?uploadType=media', {
+      method: 'patch', contentType: 'video/mp4', payload: blob.getBytes(),
+      headers: {Authorization: 'Bearer ' + ScriptApp.getOAuthToken()}, muteHttpExceptions: true});
+    out.push(v[0] + ' ' + r.getResponseCode() + ' ' + DriveApp.getFileById(v[1]).getSize());
+  });
+  Logger.log(out.join('\n'));
+  return out;
+}
