@@ -184,7 +184,7 @@ function subirVideos() {
   var it = DriveApp.getFoldersByName(carpetaNombre);
   var carpeta = it.hasNext() ? it.next() : DriveApp.createFolder(carpetaNombre);
   var base = 'https://yulieth06.github.io/click-and-learn-ele-b1/assets/videos/';
-  var lista = [['m1.mp4', 'M1 · ¿Cómo era tu vida antes? (vídeo animado).mp4']];
+  var lista = [['m1.mp4', 'M1 · ¿Cómo era tu vida antes? (vídeo animado).mp4'], ['m3.mp4', 'M3 · El escenario y la acción (vídeo animado).mp4'], ['bienvenida.mp4', 'Bienvenida a Click & Learn (vídeo animado).mp4']];
   var out = [];
   lista.forEach(function (v) {
     var ex = carpeta.getFilesByName(v[1]);
