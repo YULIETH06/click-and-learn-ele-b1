@@ -13,7 +13,7 @@ function crearDocsCurso() {
     st[DocumentApp.Attribute.FOREGROUND_COLOR] = '#26304A';
     body.setAttributes(st);
     var t = body.getChild(0).asParagraph();
-    t.setText(emoji + '  ' + titulo).setHeading(DocumentApp.ParagraphHeading.TITLE);
+    t.setText(emoji + '  ' + titulo); t.setHeading(DocumentApp.ParagraphHeading.TITLE);
     t.editAsText().setFontFamily('Baloo 2').setBold(true).setForegroundColor(color).setFontSize(26);
     if (subtitulo) {
       var s = body.appendParagraph(subtitulo);
