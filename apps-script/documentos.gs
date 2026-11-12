@@ -197,3 +197,22 @@ function subirVideos() {
   Logger.log(out.join('\n'));
   return out;
 }
+
+// Plantilla privada del profesor: retroalimentación individual sobre el vídeo (M4.5)
+function crearRetroM4() {
+  var carpeta = DriveApp.getFoldersByName('Español Online B1 · Click & Learn · Documentos').next();
+  var doc = DocumentApp.create('Retroalimentación del vídeo (M4) · plantilla del profesor');
+  var b = doc.getBody();
+  var t = b.getChild(0).asParagraph(); t.setText('🎬  Retroalimentación sobre tu vídeo'); t.setHeading(DocumentApp.ParagraphHeading.TITLE);
+  t.editAsText().setBold(true).setForegroundColor('#0EA5A4').setFontSize(24);
+  b.appendParagraph('Para: ____________   ·   Fecha: ____________').editAsText().setForegroundColor('#6B7390').setItalic(true);
+  var tb = b.appendTable([['Aspecto', '✅ Lo que has hecho muy bien', '🎯 Un aspecto para mejorar', '🎞️ Ejemplo de tu vídeo y propuesta'], ['⏳ Tiempos del pasado', '', '', ''], ['🔗 Conectores', '', '', ''], ['🃏 Léxico y colocaciones', '', '', '']]);
+  tb.setBorderColor('#ECE4D6');
+  for (var j = 0; j < 4; j++) { tb.getCell(0, j).setBackgroundColor('#0EA5A4').editAsText().setBold(true).setForegroundColor('#FFFFFF'); }
+  var h = b.appendParagraph('💬 Mensaje final'); h.setHeading(DocumentApp.ParagraphHeading.HEADING2); h.editAsText().setForegroundColor('#FF6B5B').setBold(true);
+  b.appendParagraph('Una frase de valoración global: ');
+  b.appendParagraph('Una recomendación concreta para seguir aprendiendo después del curso: ');
+  doc.saveAndClose();
+  DriveApp.getFileById(doc.getId()).moveTo(carpeta);
+  Logger.log('retro ' + doc.getId());
+}
