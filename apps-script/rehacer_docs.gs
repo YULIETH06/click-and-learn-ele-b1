@@ -222,3 +222,44 @@ function actualizarImagenesSesiones() {
   });
   Logger.log(out.join(' | ')); return out;
 }
+
+// Quita los emojis que quedan dentro de los formularios (descripción, preguntas, opciones, comentarios).
+function limpiarEmojisFormularios() {
+  var RE = /[\u{1F000}-\u{1FAFF}\u{2300}-\u{23FF}\u{2600}-\u{27BF}\u{2B00}-\u{2BFF}\u{FE0F}\u{200D}\u{20E3}]/gu;
+  function L(s) { if (!s) return s; return s.replace(RE, '').replace(/[ \t]{2,}/g, ' ').replace(/^ +| +$/gm, '').replace(/^· | ·$/gm, ''); }
+  function T(s) { return s && RE.test(s) && (RE.lastIndex = 0, true); }
+  var out = [], it = DriveApp.getFoldersByName('Español Online B1 · Click & Learn · Formularios');
+  while (it.hasNext()) { var c = it.next(); if (c.isTrashed()) continue; var fs = c.getFilesByType(MimeType.GOOGLE_FORMS);
+    while (fs.hasNext()) { var ff = fs.next(), f = FormApp.openById(ff.getId()), n = 0;
+      if (T(f.getTitle())) { f.setTitle(L(f.getTitle())); n++; }
+      if (T(f.getDescription())) { f.setDescription(L(f.getDescription())); n++; }
+      if (T(f.getConfirmationMessage())) { f.setConfirmationMessage(L(f.getConfirmationMessage())); n++; }
+      f.getItems().forEach(function (item) {
+        if (T(item.getTitle())) { item.setTitle(L(item.getTitle())); n++; }
+        if (T(item.getHelpText())) { item.setHelpText(L(item.getHelpText())); n++; }
+        var ty = item.getType(), x = null;
+        if (ty == FormApp.ItemType.MULTIPLE_CHOICE) x = item.asMultipleChoiceItem();
+        else if (ty == FormApp.ItemType.CHECKBOX) x = item.asCheckboxItem();
+        else if (ty == FormApp.ItemType.LIST) x = item.asListItem();
+        if (x) {
+          var ch = x.getChoices();
+          if (ch.some(function (k) { return T(k.getValue()); })) {
+            x.setChoices(ch.map(function (k) { return x.createChoice(L(k.getValue()), k.isCorrectAnswer()); })); n++; }
+          if (f.isQuiz()) {
+            ['Correct', 'Incorrect'].forEach(function (w) { var q = x['getFeedbackFor' + w]();
+              if (q && T(q.getText())) { x['setFeedbackFor' + w](FormApp.createFeedback().setText(L(q.getText())).build()); n++; } });
+          }
+        }
+        if (ty == FormApp.ItemType.GRID || ty == FormApp.ItemType.CHECKBOX_GRID) {
+          var g = ty == FormApp.ItemType.GRID ? item.asGridItem() : item.asCheckboxGridItem();
+          if (g.getRows().some(T)) { g.setRows(g.getRows().map(L)); n++; }
+          if (g.getColumns().some(T)) { g.setColumns(g.getColumns().map(L)); n++; }
+        }
+        if (ty == FormApp.ItemType.SCALE) { var s = item.asScaleItem();
+          if (T(s.getLeftLabel()) || T(s.getRightLabel())) { s.setLabels(L(s.getLeftLabel()), L(s.getRightLabel())); n++; } }
+      });
+      var rest = 0; f.getItems().forEach(function (i) { if (T(i.getTitle()) || T(i.getHelpText())) rest++; });
+      out.push(f.getTitle() + ': ' + n + ' cambios, quedan ' + rest);
+    } }
+  Logger.log(out.join('\n')); return out;
+}
