@@ -179,7 +179,7 @@ function auditarAcceso() {
     try {
       var f = DriveApp.getFileById(id); var acc = f.getSharingAccess();
       if (f.isTrashed()) { out.push('PAPELERA ' + f.getName()); return; }
-      if (acc != DriveApp.Access.ANYONE_WITH_LINK && acc != DriveApp.Access.ANYONE) { f.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW); out.push('ABIERTO AHORA ' + f.getName()); }
+      if (acc != DriveApp.Access.ANYONE_WITH_LINK && acc != DriveApp.Access.ANYONE) { out.push('PRIVADO ' + f.getName()); }
       else out.push('ok ' + f.getName());
     } catch (e) { out.push('ERROR ' + id + ' ' + e); }
   });
