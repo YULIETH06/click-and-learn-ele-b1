@@ -263,3 +263,40 @@ function limpiarEmojisFormularios() {
     } }
   Logger.log(out.join('\n')); return out;
 }
+
+// Panel de resultados: una sola hoja con las respuestas de todos los formularios y los enlaces al resto de resultados.
+function crearPanelResultados() {
+  var nombre = 'Panel de resultados · Click & Learn';
+  var it = DriveApp.getFilesByName(nombre), ss;
+  while (it.hasNext()) { var x = it.next(); if (!x.isTrashed()) { ss = SpreadsheetApp.openById(x.getId()); break; } }
+  if (!ss) ss = SpreadsheetApp.create(nombre);
+  var inicio = ss.getSheets()[0]; inicio.setName('Inicio');
+  var orden = ['Prueba diagnóstica · Español B1', 'Resultados · Prueba diagnóstica interactiva', 'M1 · Descubre el pretérito imperfecto', 'Autoevaluación · Módulo 1', 'M2 · Descubre los conectores', 'Autoevaluación · Módulo 2', 'M3 · Escenario y acción', 'Autoevaluación · Módulo 3', 'Cierre del curso · Autoevaluación final y opinión'];
+  var forms = {}, fit = DriveApp.getFoldersByName('Español Online B1 · Click & Learn · Formularios');
+  while (fit.hasNext()) { var c = fit.next(); if (c.isTrashed()) continue; var fs = c.getFilesByType(MimeType.GOOGLE_FORMS); while (fs.hasNext()) { var ff = fs.next(); forms[ff.getName()] = ff.getId(); } }
+  var filas = [], out = [];
+  orden.forEach(function (n, k) {
+    var id = forms[n]; if (!id) { out.push('falta ' + n); return; }
+    var f = FormApp.openById(id);
+    var ya = ss.getSheets().filter(function (s) { return s.getFormUrl() && s.getFormUrl().indexOf(id) > -1; })[0];
+    if (!ya) { f.setDestination(FormApp.DestinationType.SPREADSHEET, ss.getId()); SpreadsheetApp.flush(); Utilities.sleep(1500);
+      ss = SpreadsheetApp.openById(ss.getId());
+      ya = ss.getSheets().filter(function (s) { var u = s.getFormUrl(); return u && (u.indexOf(id) > -1 || u.indexOf(f.getPublishedUrl().split('/e/')[1].split('/')[0]) > -1); })[0]; }
+    var corto = (k + 1) + '. ' + n.replace('Prueba diagnóstica interactiva', 'Diagnóstico web').replace('Autoevaluación final y opinión', 'final').slice(0, 60);
+    if (ya) { ya.setName(corto); filas.push([corto, '=COUNTA(\'' + corto + '\'!A2:A)', f.getEditUrl().replace('/edit', '/edit#responses')]); }
+    else filas.push([n, 'sin pestaña', f.getEditUrl()]);
+  });
+  inicio.clear();
+  var cab = [['Panel de resultados · Español Online B1: Click & Learn', '', ''], ['Las respuestas de los formularios llegan solas a las pestañas de esta hoja.', '', ''], ['', '', ''], ['Formulario', 'Respuestas', 'Abrir el formulario']];
+  inicio.getRange(1, 1, 4, 3).setValues(cab);
+  if (filas.length) inicio.getRange(5, 1, filas.length, 3).setValues(filas);
+  var r = 6 + filas.length;
+  var otros = [['Otros resultados', '', ''], ['Tareas finales M1–M4 (notas y rúbricas)', 'Classroom · Calificaciones', 'https://classroom.google.com/c/Njk5MDg2Nzc0NTg0/gb/sort-name'], ['Kahoot M3 ¿Escenario o acción?', 'Kahoot · Informes, después de cada partida', 'https://create.kahoot.it/user-reports'], ['Actividades de Educaplay', 'Educaplay · resultados de quien juega con sesión iniciada', 'https://es.educaplay.com/'], ['Listas de Quizlet', 'Práctica libre: la cuenta gratuita no guarda el progreso de cada alumno', '']];
+  inicio.getRange(r, 1, otros.length, 3).setValues(otros);
+  inicio.getRange(1, 1).setFontSize(14).setFontWeight('bold');
+  inicio.getRange(4, 1, 1, 3).setFontWeight('bold').setBackground('#e8eefb');
+  inicio.getRange(r, 1, 1, 3).setFontWeight('bold').setBackground('#e8eefb');
+  inicio.setColumnWidth(1, 330); inicio.setColumnWidth(2, 330); inicio.setColumnWidth(3, 420);
+  ss.setActiveSheet(inicio); ss.moveActiveSheet(1);
+  out.push('panel ' + ss.getUrl()); Logger.log(out.join('\n')); return out;
+}

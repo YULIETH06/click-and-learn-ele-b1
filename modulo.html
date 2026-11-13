@@ -51,6 +51,7 @@
   .giro.v .in{transform:rotateY(180deg)}
   .giro .cara{position:absolute;inset:0;border-radius:18px;display:grid;place-items:center;text-align:center;padding:12px;backface-visibility:hidden;font-weight:600;box-shadow:var(--sombra)}
   .giro .fr{background:var(--c);color:#fff;font-family:"Poppins";font-size:1.25rem}
+  .giro.foto{height:170px}
   .giro .at{background:#fff;transform:rotateY(180deg);font-size:.92rem}
   .volver{display:inline-flex;align-items:center;gap:6px;margin:26px 0 0;font-weight:600;text-decoration:none;color:var(--suave)}
   @media (max-width:780px){.rejilla,.actividades{grid-template-columns:1fr}.tarjetas-g{grid-template-columns:repeat(2,1fr)}.cajas{grid-template-columns:1fr}.cabecera .gran{display:none}}
@@ -91,7 +92,7 @@ const ENLACES = {
   m1:{video:"video.html?v=m1",forms:"https://docs.google.com/forms/d/e/1FAIpQLScz8ybIq2VUHIqCv7r4LHXYt7Lm76i4lYv4uYkRQOpzTYW_mg/viewform",quizlet:"https://quizlet.com/1234542655/flashcards",educaplay:"https://es.educaplay.com/recursos-educativos/31499075-m1_cuando_era_nino.html",auto:"https://docs.google.com/forms/d/e/1FAIpQLScGsbb8hFrGiOvl8xgYXjNpvhiRF_mQyvlZMf2umjqTb-lCYw/viewform"},
   m2:{forms:"https://docs.google.com/forms/d/e/1FAIpQLSclg26DxYvx0Pe23QVOk44UiHWUiWu3-w7_rcVjA6JulDXo0g/viewform",educaplay:"https://es.educaplay.com/recursos-educativos/31502494-m2_cada_conector_y_su_funcion.html",auto:"https://docs.google.com/forms/d/e/1FAIpQLScQR0F7iPbzkXRmFbowRoQd1b9e5Yb_tI-ubZKO7bhlmVHHxQ/viewform"},
   m3:{video:"video.html?v=m3",forms:"https://docs.google.com/forms/d/e/1FAIpQLScfOlosbd_ywKwYKOv6YTmSvsrCGT3TH9LpmgY4zruOvcuy3A/viewform",quizlet:"https://quizlet.com/1234543052/flashcards",educaplay:"https://es.educaplay.com/recursos-educativos/31499541-m3_un_viaje_a_cartagena.html",kahoot:"https://create.kahoot.it/details/dc83e039-1592-44a2-97d2-a0c59acede37",auto:"https://docs.google.com/forms/d/e/1FAIpQLSdxOos_QEMDxowE1GQBUVusArxkKzAlnl3q6OwWdu54VbJZCw/viewform"},
-  m4:{quizlet:"https://quizlet.com/1234543049/flashcards",educaplay:"https://es.educaplay.com/recursos-educativos/31498766-m4_fiestas_y_tradiciones.html",cierre:"https://docs.google.com/forms/d/e/1FAIpQLScb4cD__SVqnA9G8wgoqu-whjwHrMwH8pXKo6SprlFjEe88cA/viewform"}
+  m4:{carnaval:"carnaval.html",quizlet:"https://quizlet.com/1234543049/flashcards",educaplay:"https://es.educaplay.com/recursos-educativos/31498766-m4_fiestas_y_tradiciones.html",cierre:"https://docs.google.com/forms/d/e/1FAIpQLScb4cD__SVqnA9G8wgoqu-whjwHrMwH8pXKo6SprlFjEe88cA/viewform"}
 };
 const W=(c,t)=>`<span class="resaltar ${c}">${t}</span>`;
 const MODS={
@@ -133,13 +134,13 @@ const MODS={
   desc:"Presenta en vídeo una tradición de tu país y compárala con una tradición colombiana.",
   obj:["Presentar una tradición o una fiesta de tu país.","Contar cómo se celebraba antes, cómo se celebra ahora y una experiencia tuya en ella.","Compararla con una tradición colombiana usando todo lo aprendido."],
   tarea:"<b>Tarea final:</b> presentación en vídeo de 3-4 minutos (o diapositivas con tu voz) y comentarios a dos compañeros.",
-  acts:[["quizlet","layers","Quizlet: Fiestas y tradiciones","Vocabulario del Carnaval"],["educaplay","gamepad-2","Educaplay: crucigrama","¿Conoces el Carnaval?"],["cierre","flag","Cierre del curso","Autoevaluación final y opinión"]],
+  acts:[["carnaval","image","El Carnaval en imágenes","Fotos reales y 5 actividades de gramática"],["quizlet","layers","Quizlet: Fiestas y tradiciones","Frases e imágenes del Carnaval"],["educaplay","gamepad-2","Educaplay: crucigrama","¿Conoces el Carnaval?"],["cierre","flag","Cierre del curso","Autoevaluación final y opinión"]],
   leyenda:[["imp","Imperfecto: cómo era antes"],["ind","Indefinido: lo que pasó aquel día"],["clave","Léxico del Carnaval"]],
   texto:`<p class="persona">Laura, 41 años, Barranquilla</p><p>Cuando ${W("imp","era")} niña, mi abuela me ${W("imp","llevaba")} cada año a ver la Batalla de Flores, el gran ${W("clave","desfile")} con el que empieza el Carnaval de Barranquilla. Nos ${W("imp","sentábamos")} en la acera desde muy temprano porque, como no había ${W("clave","palcos")} para todos, había que coger sitio. Mi abuela ${W("imp","llevaba")} una nevera con agua y comida, y siempre ${W("imp","conocíamos")} a alguien nuevo.</p>
   <p>Recuerdo especialmente un año. Yo tenía ocho años y mi madre me había hecho un ${W("clave","disfraz")} de ${W("clave","marimonda")}, con la máscara de nariz larga y orejas grandes. Aunque hacía un calor tremendo, no ${W("ind","dejé")} de bailar en toda la tarde. Al final, un hombre de una ${W("clave","comparsa")} me ${W("ind","subió")} a su ${W("clave","carroza")} y ${W("ind","bailé")} ${W("clave","cumbia")} delante de miles de personas. Ese día ${W("ind","empecé")} a entender por qué dicen: Quien lo vive es quien lo goza.</p>
   <p>Hoy el Carnaval sigue siendo la fiesta más importante de la ciudad. Desde 2003 la UNESCO lo reconoce como ${W("clave","patrimonio")} de la humanidad. Yo ya no me disfrazo de marimonda, pero todavía llevo a mis hijos a la Batalla de Flores, como hacía mi abuela conmigo.</p>`,
-  juego:{tipo:"giro",tit:"Vocabulario del Carnaval",instr:"Toca cada tarjeta para descubrir su significado.",
-   fichas:[["desfile","Grupo de personas que pasa por la calle en orden durante una fiesta"],["carroza","Vehículo decorado que participa en un desfile"],["comparsa","Grupo de personas disfrazadas que bailan juntas"],["disfraz","Ropa para parecer otra persona o un personaje"],["cumbia","Música y baile tradicional del Caribe colombiano"],["palco","Lugar elevado con asientos para ver un desfile"],["marimonda","Disfraz con máscara de nariz larga del Carnaval de Barranquilla"],["patrimonio","Tradiciones de un pueblo que se deben conservar"]]}}
+  juego:{tipo:"giro",tit:"Vocabulario del Carnaval",instr:"Fotos reales del Carnaval. Toca cada una para descubrir qué es.",
+   fichas:[["la Batalla de Flores","El gran desfile del sábado de Carnaval","Carnaval de Barranquilla Batalla de flores.png"],["la marimonda","Disfraz con máscara de nariz larga y orejas grandes","Marimonda - Carnaval de Barranquilla 2012.jpg"],["la comparsa","Grupo de personas disfrazadas que bailan juntas","Comparsa del C. de B.quilla.jpg"],["el congo","Personaje con turbante de flores y traje de colores","Congo en carnaval.jpg"],["la cumbia","Música y baile del Caribe colombiano, con pollera","Bailadores de cumbia.jpg"],["el monocuco","Disfraz con capucha y máscara: nadie sabe quién eres","Monocucos Carnaval de Barranquilla.jpg"],["la carroza","Vehículo decorado que participa en un desfile","Carroza en el Carnaval de Barranquilla.jpg"],["las máscaras","Cubren la cara; muchas representan animales","Mascaras del carnaval de Barranquilla.jpg"]]}}
 };
 const $i=id=>document.getElementById(id); const cab_num=$i("cab-num"),cab_tit=$i("cab-tit"),cab_desc=$i("cab-desc"),cab_emoji=$i("cab-emoji"),objetivos=$i("objetivos"),tarea=$i("tarea"),actividades=$i("actividades"),tm=$i("tm"),leyenda=$i("leyenda"),btn_color=$i("btn-color");
 const n = Math.min(4,Math.max(1, parseInt(new URLSearchParams(location.search).get("m"))||1));
@@ -150,7 +151,7 @@ const cab=document.getElementById("cab"); cab.style.background=M.grad;
 cab_num.textContent=M.num; cab_tit.textContent=M.tit; cab_desc.textContent=M.desc; cab_emoji.innerHTML=`<i data-lucide="${M.emoji}"></i>`;
 document.getElementById("nav-mod").innerHTML=[1,2,3,4].map(i=>`<a class="chip" href="modulo.html?m=${i}" style="${i===n?`background:${M.color};color:#fff;border-color:${M.color}`:''}">M${i}</a>`).join("");
 objetivos.innerHTML=M.obj.map(o=>`<li>${o}</li>`).join(""); tarea.innerHTML=M.tarea;
-actividades.innerHTML=M.acts.map(([k,ic,t,s])=>{const u=L[k]; return u?`<a class="act" href="${u}" target="_blank" rel="noopener"><span class="ic"><i data-lucide="${ic}"></i></span><b>${t}</b><small>${s}</small><span class="est">Abrir actividad <i data-lucide="arrow-up-right"></i></span></a>`:`<div class="act prox"><span class="ic"><i data-lucide="${ic}"></i></span><b>${t}</b><small>${s}</small><span class="est">Disponible pronto</span></div>`}).join("");
+actividades.innerHTML=M.acts.map(([k,ic,t,s])=>{const u=L[k]; return u?`<a class="act" href="${u}"${/^https?:/.test(u)?' target="_blank" rel="noopener"':''}><span class="ic"><i data-lucide="${ic}"></i></span><b>${t}</b><small>${s}</small><span class="est">Abrir actividad <i data-lucide="arrow-up-right"></i></span></a>`:`<div class="act prox"><span class="ic"><i data-lucide="${ic}"></i></span><b>${t}</b><small>${s}</small><span class="est">Disponible pronto</span></div>`}).join("");
 tm.innerHTML=M.texto;
 leyenda.innerHTML=M.leyenda.map(([c,t])=>`<span class="resaltar ${c}" style="border:2px solid var(--linea)">${t}</span>`).join("");
 lucide.createIcons();
@@ -158,8 +159,9 @@ btn_color.onclick=()=>{const on=tm.classList.toggle("modo-color"); leyenda.class
 // juegos
 const J=M.juego, jg=document.getElementById("juego");
 if(J.tipo==="giro"){
-  jg.innerHTML=`<h2 class="t">${J.tit}</h2><p class="instr">${J.instr}</p><div class="tarjetas-g">${J.fichas.map(([a,b])=>`<div class="giro"><div class="in"><div class="cara fr">${a}</div><div class="cara at">${b}</div></div></div>`).join("")}</div>`;
+  jg.innerHTML=`<h2 class="t">${J.tit}</h2><p class="instr">${J.instr}</p><div class="tarjetas-g">${J.fichas.map(([a,b,img])=>`<div class="giro${img?' foto':''}"><div class="in"><div class="cara fr"${img?` style="background:linear-gradient(transparent 45%,rgba(0,0,0,.7)),url('https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(img)}?width=480') center/cover;place-items:end start;text-align:left;font-size:1.05rem"`:''}>${a}</div><div class="cara at">${b}</div></div></div>`).join("")}</div>`;
   jg.querySelectorAll(".giro").forEach(g=>g.onclick=()=>g.classList.toggle("v"));
+  if(J.fichas.some(f=>f[2])) jg.insertAdjacentHTML("beforeend",'<p style="font-size:.75rem;color:var(--suave);margin:10px 0 0">Fotos de Wikimedia Commons con licencia libre. Créditos en <a href="carnaval.html#creditos-sec">El Carnaval en imágenes</a>.</p>');
   jg.querySelector(".tarjetas-g").style.gridTemplateColumns="repeat(2,1fr)";
 } else {
   let aciertos=0, sel=null;
