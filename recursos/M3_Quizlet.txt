@@ -1,40 +1,30 @@
-un día	Expresión para empezar a contar algo. Un día decidí viajar sola.
-de repente	De forma inesperada, sin aviso. De repente, se fue la luz.
-en ese momento	Justo entonces. En ese momento sonó el teléfono.
-al cabo de un rato	Después de un tiempo corto. Al cabo de un rato, llegó la policía.
-entonces	Después de eso; en ese momento. Entonces empecé a correr.
-mientras	Al mismo tiempo que. Mientras corría, pensaba en el vuelo.
-al final	En el último momento de la historia. Al final llegué a tiempo.
-por suerte	Afortunadamente. Por suerte, alguien encontró mi pasaporte.
-darse cuenta de	Notar algo de pronto. Me di cuenta de que no tenía el pasaporte.
-llevarse un susto	Sentir miedo de forma repentina. Me llevé un susto enorme.
-ponerse nervioso/a	Empezar a sentir nervios. Me puse muy nerviosa.
-quedarse sin palabras	No saber qué decir por la sorpresa. Me quedé sin palabras.
-pasarlo bien	Divertirse. Lo pasamos muy bien en la fiesta.
-pasarlo mal	Sufrir o sentirse incómodo. Lo pasé mal el primer día.
-tener mala suerte	Tener problemas por casualidad. Tuve mala suerte con el clima.
-perder el vuelo	No llegar a tiempo al avión. Casi pierdo el vuelo.
-hacer escala	Parar en un aeropuerto intermedio. Hicimos escala en Panamá.
-hacer la maleta	Preparar el equipaje. Hice la maleta la noche anterior.
-pedir ayuda	Solicitar que alguien te ayude. Pedí ayuda a un policía.
-echar una mano	Ayudar. Una señora me echó una mano.
-empezar a + infinitivo	Comenzar una acción. Empecé a correr.
-dejar de + infinitivo	Terminar una acción o un hábito. Dejé de confiar en mi memoria.
-volver a + infinitivo	Repetir una acción. Nunca volví a perder el pasaporte.
-acabar de + infinitivo (ampliación)	Haber hecho algo hace muy poco. Acababa de llegar cuando sonó el teléfono.
-seguir + gerundio (ampliación)	Continuar una acción. A pesar del ruido, seguí durmiendo.
-había + participio	Forma del pluscuamperfecto: acción anterior a otra del pasado. Ya había salido cuando llegaste.
-emocionado/a	Con mucha ilusión o alegría. Estaba emocionada por el viaje.
-agotado/a	Muy cansado. Llegué agotado al hotel.
-aliviado/a	Tranquilo después de un problema. Me sentí aliviada.
-asustado/a	Con miedo. Estaba muy asustado.
-madrugar (repaso M1)	Levantarse muy temprano. Tuve que madrugar para el vuelo.
-mudarse (repaso M1)	Cambiar de casa o de ciudad. Me mudé a Bogotá en 2023.
-echar de menos (repaso M1)	Sentir tristeza por alguien o algo que no está. Echaba de menos a mi familia.
-quedar con (repaso M1)	Encontrarse con alguien. Había quedado con un amigo en el aeropuerto.
-en aquella época (repaso M1)	En aquel momento del pasado. En aquella época viajaba mucho.
-soler + infinitivo (repaso M1)	Hacer algo habitualmente. Solía viajar en verano.
-ya no (repaso M1)	Algo que pasaba antes ha terminado. Ya no viajo sin revisar la mochila.
-todavía (repaso M1)	Algo que pasaba antes continúa. Todavía me acuerdo de ese día.
-pasar tiempo con (repaso M1)	Estar con alguien. Pasé el día con una familia colombiana.
-la costumbre (repaso M1)	Algo que se hace de forma habitual. Tengo la costumbre de llegar temprano.
+Un día	Expresión para empezar a contar una historia. Ejemplo: Un día decidí viajar sola a Colombia.
+Hacer la maleta	Preparar la ropa y las cosas para un viaje. Ejemplo: Hice la maleta la noche anterior.
+Emocionado/a	Con mucha ilusión por algo. Ejemplo: Estaba muy emocionada porque era mi primer viaje sola.
+Había + participio	Lo que había pasado antes del momento de la historia. Ejemplo: Había ahorrado durante dos años para el viaje.
+Hacer escala	Parar en un aeropuerto intermedio. Ejemplo: Hicimos escala en Panamá.
+Mientras	Al mismo tiempo que. Ejemplo: Mientras esperaba el vuelo, leía un libro.
+De repente	De forma inesperada, sin aviso. Ejemplo: De repente, se fue la luz.
+En ese momento	Justo entonces. Ejemplo: En ese momento sonó el teléfono.
+Darse cuenta de	Notar algo de pronto. Ejemplo: Me di cuenta de que no tenía el pasaporte.
+Tener mala suerte	Tener problemas por casualidad. Ejemplo: Tuve mala suerte: empezó a llover.
+Perder el vuelo	No llegar a tiempo al avión. Ejemplo: Casi pierdo el vuelo.
+Empezar a + infinitivo	Comenzar una acción. Ejemplo: Empecé a correr por el pasillo.
+Llevarse un susto	Sentir miedo de forma repentina. Ejemplo: Me llevé un susto enorme.
+Ponerse nervioso/a	Empezar a sentir nervios. Ejemplo: Me puse muy nerviosa.
+Asustado/a	Con miedo. Ejemplo: Estaba asustada y no sabía qué hacer.
+Quedarse sin palabras	No saber qué decir por la sorpresa. Ejemplo: Cuando vi a mi familia en el aeropuerto, me quedé sin palabras.
+Pedir ayuda	Solicitar que alguien te ayude. Ejemplo: Pedí ayuda a un policía.
+Echar una mano	Ayudar a alguien. Ejemplo: Una señora me echó una mano.
+Al cabo de un rato	Después de un tiempo corto. Ejemplo: Al cabo de un rato, llegó la policía.
+Entonces	Después de eso; en ese momento. Ejemplo: Entonces volví corriendo a la puerta de embarque.
+Por suerte	Afortunadamente. Ejemplo: Por suerte, alguien encontró mi pasaporte.
+Aliviado/a	Tranquilo después de un problema o de un miedo. Ejemplo: Me sentí aliviada cuando vi mi pasaporte.
+Al final	En el último momento de la historia. Ejemplo: Al final llegué a tiempo.
+Agotado/a	Muy cansado. Ejemplo: Llegué a Cartagena agotada.
+Dejar de + infinitivo	No hacer más algo que hacías. Ejemplo: Ese día dejé de confiar en mi memoria.
+Volver a + infinitivo	Hacer algo otra vez. Ejemplo: Nunca volví a olvidar el pasaporte.
+Pasarlo bien	Divertirse. Ejemplo: Al final lo pasamos muy bien en Cartagena.
+Pasarlo mal	Sufrir o sentirse incómodo. Ejemplo: Lo pasé muy mal en el aeropuerto.
+Acabar de + infinitivo (ampliación)	Haber hecho algo hace muy poco. Ejemplo: Acababa de llegar al hotel cuando sonó el teléfono.
+Seguir + gerundio (ampliación)	Continuar una acción. Ejemplo: Después de aquel susto, sigo viajando sola.
