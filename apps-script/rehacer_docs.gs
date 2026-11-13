@@ -170,3 +170,22 @@ function subirImagenesSesiones() {
   });
   Logger.log(out.join(' | ')); return out;
 }
+
+// Revisa que los estudiantes puedan abrir todos los archivos enlazados en el aula.
+function auditarAcceso() {
+  var ids = '1KyPjnl-BjEBGKVxMVehFXzcz7OKVR7uJ,1NoQ4KrpC6k25i9IxkSxD4LXPmYxpexT6,1DVQmF9xt4jrtiBxd56WgSdG5r5yBGJTQ,1uQ-oMBQfsONhVBXxXcfeIqigEksX1vgf,1YJEt5C5gpDJgrbCuKryumou6Ei4sFyFo,1dxp7vEC22HeAMwn8-e8Ybjkbd0Umf6WkB5Taf0rpE9s,1vvSqOFNEh7R2gXYd0I2YIoeVP_A19jE_eCPDqSYP1Qw,1MUYzpDG2a5huWyZuHpI5vUSrSM45lotR,1FeETdqSYoXwRNqs7ClGQm3DrLVU_-GLk,13XWGZZDxgey34SRViSNeiKB7q2TEAlPT,1NOzcOj41wShUJFufdTXjsFCqHDMhLCa_1Wkiz1ljW3M,1-Y2zcwcXZBSdEtK5S9Lk5WBGk15MzLc0,1BRXUgHD_6eWWR39t9I7LBBSCiiCghFm2r4OVwZ9U_bI,1un8V5p3ywO-nTbXN_Lq5betLbYP5NPyK,1jC4szvjVF974lNUFBGJHo2zwLYGe-SC2hIsSmcQtuSQ,1FsG1Ue0ANKEC5ss2Da-Q9h40_HydQcCd,1MivBrzExy3SrV41wOrnvtpFHWI_5OF79UsROlh5Sb5g'.split(',');
+  var out = [];
+  ids.forEach(function (id) {
+    try {
+      var f = DriveApp.getFileById(id); var acc = f.getSharingAccess();
+      if (f.isTrashed()) { out.push('PAPELERA ' + f.getName()); return; }
+      if (acc != DriveApp.Access.ANYONE_WITH_LINK && acc != DriveApp.Access.ANYONE) { f.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW); out.push('ABIERTO AHORA ' + f.getName()); }
+      else out.push('ok ' + f.getName());
+    } catch (e) { out.push('ERROR ' + id + ' ' + e); }
+  });
+  var it = DriveApp.getFoldersByName('Español Online B1 · Click & Learn · Formularios');
+  while (it.hasNext()) { var c = it.next(); if (c.isTrashed()) continue; var fs = c.getFilesByType(MimeType.GOOGLE_FORMS);
+    while (fs.hasNext()) { var ff = fs.next(); var form = FormApp.openById(ff.getId());
+      out.push((form.isAcceptingResponses() ? 'ok' : 'CERRADO') + ' form ' + ff.getName() + (form.requiresLogin() ? ' (login)' : '') + ' ' + form.getPublishedUrl().split('/e/')[1].slice(0, 12)); } }
+  Logger.log(out.join('\n')); return out;
+}
