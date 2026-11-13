@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Costumbres que sorprenden · Click &amp; Learn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css">
+<style>
+  :root{--c:#e5604f;--c2:#fdecea;--osc:#b8412f}
+  main{position:relative;z-index:1;padding-bottom:20px}
+  .cabecera{background:#e5604f;border-radius:0 0 34px 34px;color:#fff;padding:38px 0 30px;margin-bottom:24px}
+  .cabecera h1{font-size:clamp(1.9rem,5vw,2.8rem)}
+  .cabecera .num{font-weight:600;font-size:.85rem;letter-spacing:.06em;opacity:.9}
+  .cabecera p{max-width:660px;font-size:1.05rem;opacity:.95;margin:10px 0 0}
+  .indice{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .indice a{background:rgba(255,255,255,.18);color:#fff;text-decoration:none;padding:6px 14px;border-radius:999px;font-weight:500;font-size:.9rem}
+  section.tarjeta{margin-top:18px}
+  h2.t{font-size:1.45rem;margin-bottom:6px;color:var(--noche);display:flex;align-items:center;gap:10px}
+  h2.t .n{width:34px;height:34px;border-radius:10px;background:var(--c);color:#fff;display:grid;place-items:center;font-size:1rem;flex:none}
+  .instr{color:var(--suave);font-weight:500;margin:0 0 16px}
+  .foco{background:var(--c2);border-left:6px solid var(--c);border-radius:12px;padding:10px 14px;margin:0 0 16px;font-size:.95rem}
+  .foco b{color:var(--osc)}
+  .marc{font-weight:600;margin-top:14px;color:var(--osc)}
+  .mal{animation:temblor .35s} @keyframes temblor{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+  /* galería */
+  .galeria{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .foto{perspective:900px;height:260px;cursor:pointer}
+  .foto .in{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+  .foto.v .in{transform:rotateY(180deg)}
+  .foto .cara{position:absolute;inset:0;border-radius:18px;overflow:hidden;backface-visibility:hidden;box-shadow:var(--sombra)}
+  .foto .fr img{width:100%;height:100%;object-fit:cover;display:block;background:#ddd}
+  .foto .fr .pal{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-weight:600;font-size:1.05rem}
+  .foto .at{background:#fff;transform:rotateY(180deg);padding:16px;display:flex;flex-direction:column;gap:8px;font-size:.9rem;border:3px solid var(--c)}
+  .foto .at b{font-size:1.05rem;color:var(--osc)}
+  .foto .at em{background:#fff6dd;border-radius:8px;padding:8px 10px;font-style:normal}
+  .foto .at em u{text-decoration:none;color:var(--osc);font-weight:600}
+  .foto .at small{margin-top:auto;color:var(--suave);font-size:.72rem}
+  /* unir */
+  .unir{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .col{display:flex;flex-direction:column;gap:8px}
+  .pieza{padding:12px 16px;border-radius:14px;background:#fff;border:3px solid var(--linea);font-weight:500;text-align:left}
+  .pieza:hover{border-color:var(--c)} .pieza.sel{border-color:var(--c);background:var(--c2)}
+  .pieza.ok{background:#e4f8ee;border-color:#1fa971;color:#127a52;cursor:default}
+  /* construir */
+  .frase-obj{min-height:58px;border:3px dashed var(--linea);border-radius:14px;padding:10px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}
+  .fichas{display:flex;flex-wrap:wrap;gap:8px;min-height:46px}
+  .fi{padding:8px 14px;border-radius:12px;background:#fff;border:2px solid var(--linea);font-weight:600}
+  .fi.con{background:var(--c2);border-color:var(--c);color:var(--osc)}
+  .frase-obj.ok{border-color:#1fa971;background:#e4f8ee}
+  .barra{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;align-items:center}
+  .bt{padding:10px 18px;border-radius:999px;font-weight:600;background:var(--noche);color:#fff}
+  .bt.claro{background:#fff;color:var(--noche);border:2px solid var(--linea)}
+  /* reto */
+  .reto{max-width:720px}
+  .prog{height:10px;border-radius:99px;background:var(--linea);overflow:hidden;margin-bottom:16px}
+  .prog i{display:block;height:100%;background:var(--c);width:0;transition:width .3s}
+  .sit{font-size:1.25rem;font-weight:500;margin:0 0 16px;line-height:1.5}
+  .sit .h{display:inline-block;min-width:110px;border-bottom:3px solid var(--c);text-align:center;color:var(--osc);font-weight:600}
+  .ops{display:flex;flex-wrap:wrap;gap:10px}
+  .op{padding:10px 20px;border-radius:999px;background:#fff;border:2px solid var(--linea);font-weight:600}
+  .op:hover{border-color:var(--c)} .op.bien{background:#e4f8ee;border-color:#1fa971;color:#127a52} .op.fallo{background:#ffecea;border-color:#e5604f;color:#b33a2c}
+  .exp{margin:12px 0 0;color:var(--suave);min-height:24px}
+  /* opinión */
+  .pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+  .paso{background:#fff;border:2px solid var(--linea);border-radius:14px;padding:12px;font-size:.9rem}
+  .paso b{display:block;color:var(--osc);margin-bottom:4px}
+  .chips-con{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
+  .chips-con button{padding:5px 12px;border-radius:999px;background:var(--c2);color:var(--osc);font-weight:600;font-size:.88rem}
+  textarea{width:100%;min-height:150px;font:inherit;padding:12px;border-radius:14px;border:2px solid var(--linea);resize:vertical}
+  .creditos{font-size:.78rem;color:var(--suave);columns:2;gap:24px} .creditos a{color:var(--suave)}
+  .volver{display:inline-flex;align-items:center;gap:6px;margin:26px 0 0;font-weight:600;text-decoration:none;color:var(--suave)}
+  @media (max-width:780px){.galeria{grid-template-columns:1fr 1fr}.unir{grid-template-columns:1fr}.pasos{grid-template-columns:1fr 1fr}.creditos{columns:1}}
+</style>
+<script src="https://unpkg.com/lucide@0.441.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<div class="fondo-confeti" aria-hidden="true"></div>
+<header class="barra-sup"><div class="envoltura">
+  <a class="marca" href="index.html"><span class="logo"><i data-lucide="message-circle"></i></span><span>Click &amp; Learn<small>ESPAÑOL ONLINE B1</small></span></a>
+  <a class="chip" href="modulo.html?m=2">Volver al módulo 2</a>
+</div></header>
+<div class="cabecera"><div class="envoltura">
+  <span class="num">MÓDULO 2 · PRÁCTICA A TU RITMO</span>
+  <h1>Costumbres que sorprenden</h1>
+  <p>Seis costumbres colombianas que sorprenden a quien llega de fuera. Úsalas para practicar los conectores de causa, consecuencia y contraste antes de escribir tu texto de opinión.</p>
+  <div class="indice"><a href="#galeria">1. Costumbres</a><a href="#unir">2. Causa y consecuencia</a><a href="#construir">3. Construye la frase</a><a href="#reto">4. Reto de conectores</a><a href="#opinion">5. Tu opinión</a></div>
+</div></div>
+<main class="envoltura">
+
+<section class="tarjeta" id="galeria">
+  <h2 class="t"><span class="n">1</span>Seis costumbres colombianas</h2>
+  <p class="instr">Toca cada foto: verás qué es y qué opina alguien que vino de fuera. Fíjate en el conector resaltado.</p>
+  <div class="galeria" id="gal"></div>
+</section>
+
+<section class="tarjeta" id="unir">
+  <h2 class="t"><span class="n">2</span>Une la causa con su consecuencia</h2>
+  <p class="foco"><b>Como</b> va al principio de la frase. <b>Así que</b> y <b>por eso</b> introducen lo que pasa después.</p>
+  <p class="instr">Toca el principio de una frase y después el final que le corresponde.</p>
+  <div class="unir"><div class="col" id="izq"></div><div class="col" id="der"></div></div>
+  <p class="marc" id="umarc"></p>
+</section>
+
+<section class="tarjeta" id="construir">
+  <h2 class="t"><span class="n">3</span>Construye la frase</h2>
+  <p class="instr">Toca las palabras en orden para formar la frase. Si te equivocas, toca una palabra de la frase para devolverla.</p>
+  <div class="frase-obj" id="obj"></div>
+  <div class="fichas" id="fic"></div>
+  <div class="barra"><button class="bt" id="cComprobar">Comprobar</button><button class="bt claro" id="cSig" hidden>Siguiente frase</button><span class="marc" id="cmarc" style="margin:0"></span></div>
+</section>
+
+<section class="tarjeta" id="reto">
+  <h2 class="t"><span class="n">4</span>Reto: elige el conector</h2>
+  <p class="instr">Diez situaciones de la vida en Colombia. Elige el conector que completa cada una.</p>
+  <div class="reto">
+    <div class="prog"><i id="rprog"></i></div>
+    <p class="sit" id="rsit"></p>
+    <div class="ops" id="rops"></div>
+    <p class="exp" id="rexp"></p>
+    <div class="barra"><button class="bt" id="rsig" hidden>Siguiente</button><span class="marc" id="rmarc" style="margin:0"></span></div>
+  </div>
+</section>
+
+<section class="tarjeta" id="opinion">
+  <h2 class="t"><span class="n">5</span>Prepara tu texto de opinión</h2>
+  <p class="instr">Elige una costumbre de tu país que sorprendería en Colombia y escribe un borrador en cuatro partes. Toca un conector para añadirlo al texto.</p>
+  <div class="pasos">
+    <div class="paso"><b>1. Presenta</b>En mi país es normal…</div>
+    <div class="paso"><b>2. Explica por qué</b>porque, como, ya que…</div>
+    <div class="paso"><b>3. Contrasta</b>aunque, sin embargo…</div>
+    <div class="paso"><b>4. Concluye</b>por eso, así que, por lo tanto…</div>
+  </div>
+  <div class="chips-con" id="chips"></div>
+  <textarea id="borrador" placeholder="En mi país es normal..."></textarea>
+  <div class="barra"><button class="bt claro" id="copiar">Copiar mi borrador</button><span class="marc" id="cop" style="margin:0"></span></div>
+</section>
+
+<section class="tarjeta" id="creditos-sec">
+  <h2 class="t" style="font-size:1.05rem">Créditos de las fotografías</h2>
+  <div class="creditos" id="creditos"></div>
+  <p style="font-size:.78rem;color:var(--suave);margin:10px 0 0">Fotografías de Wikimedia Commons con licencia libre. Textos y actividades de elaboración propia.</p>
+</section>
+<a class="volver" href="modulo.html?m=2"><i data-lucide="arrow-left"></i> Volver al módulo 2</a>
+</main>
+<p class="pie">Español Online B1: Click &amp; Learn</p>
+<script>
+const IMG = f => "https://commons.wikimedia.org/wiki/Special:FilePath/" + encodeURIComponent(f) + "?width=640";
+const PAG = f => "https://commons.wikimedia.org/wiki/File:" + encodeURIComponent(f.replace(/ /g,"_"));
+const mezcla = a => [...a].sort(()=>Math.random()-.5);
+const C = [
+ {p:"El almuerzo", f:"Bandeja paisa del Chocolos 30062011.jpg", a:"Dtarazona", l:"CC BY-SA 3.0",
+  d:"Es la comida principal del día y suele ser abundante, como esta bandeja paisa.",
+  e:"Lena: <u>Como</u> en Alemania almorzábamos rápido, al principio me sorprendió la hora larga del almuerzo."},
+ {p:"La ciclovía", f:"Ciclovia Bogotana en Avenida Chile.JPG", a:"Lombana", l:"CC BY-SA 4.0",
+  d:"Los domingos y festivos se cierran grandes avenidas de Bogotá para montar en bicicleta, patinar o caminar.",
+  e:"Tom: Me encanta la ciclovía, <u>así que</u> todos los domingos salgo a montar en bicicleta."},
+ {p:"El tinto", f:"Canelazo y tinto en Bogotá.jpg", a:"Marvin David Del Cid", l:"CC BY-SA 4.0",
+  d:"En Colombia, un tinto es un café negro y suave. Se toma a cualquier hora y se vende hasta en la calle.",
+  e:"James: Pedí un tinto pensando que era vino; <u>sin embargo</u>, me trajeron un café."},
+ {p:"Chocolate con queso", f:"Chocolate santafereño en Café La Puerta Falsa 2.jpg", a:"autor en Wikimedia Commons", l:"CC BY-SA 4.0",
+  d:"En Bogotá es tradicional tomar chocolate caliente con un trozo de queso dentro.",
+  e:"Lena: <u>Aunque</u> al principio me parecía raro, ahora me encanta el chocolate con queso."},
+ {p:"Las arepas", f:"Arepas de arroz.jpg", a:"Espinel, Nancy; Fernández, Jaime", l:"CC BY-SA 4.0",
+  d:"Se comen en el desayuno, con la comida o a cualquier hora, y cada región tiene las suyas.",
+  e:"Tom: Hay arepas en todas partes, <u>por eso</u> ya sé distinguir varios tipos."},
+ {p:"Vender en la calle", f:"Bogotá av Jiménez carrera 10 vendedor ambulante de limones.jpg", a:"Felipe Restrepo Acosta", l:"CC BY-SA 4.0",
+  d:"En muchas calles se vende de todo: fruta, tinto, dulces o minutos para el celular.",
+  e:"James: Compro la fruta en la calle <u>porque</u> es fresca y más barata."}
+];
+gal.innerHTML = C.map(x=>`<div class="foto" tabindex="0" role="button" aria-label="${x.p}"><div class="in">
+ <div class="cara fr"><img src="${IMG(x.f)}" alt="${x.p}" loading="lazy"><span class="pal">${x.p}</span></div>
+ <div class="cara at"><b>${x.p}</b><span>${x.d}</span><em>${x.e}</em><small>Foto: ${x.a} · ${x.l}</small></div></div></div>`).join("");
+gal.querySelectorAll(".foto").forEach(f=>{f.onclick=()=>f.classList.toggle("v");f.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();f.classList.toggle("v")}}});
+
+// 2. unir
+const U = [
+ ["Como el almuerzo es largo,","mucha gente come en casa."],
+ ["Los domingos cierran las avenidas,","así que la gente sale en bicicleta."],
+ ["No sabía qué era un tinto;","por eso pedí un vino."],
+ ["Llovía mucho,","así que siempre llevaba paraguas."],
+ ["Como no conocía la costumbre,","me sorprendió el chocolate con queso."],
+ ["La fruta de la calle es más barata;","por eso la compro allí."]
+];
+let usel=null, uok=0;
+izq.innerHTML = mezcla(U.map((u,i)=>[u[0],i])).map(([t,i])=>`<button class="pieza" data-i="${i}">${t}</button>`).join("");
+der.innerHTML = mezcla(U.map((u,i)=>[u[1],i])).map(([t,i])=>`<button class="pieza" data-i="${i}">${t}</button>`).join("");
+umarc.textContent = `0/${U.length}`;
+izq.querySelectorAll(".pieza").forEach(b=>b.onclick=()=>{ if(b.classList.contains("ok")) return; izq.querySelectorAll(".pieza").forEach(x=>x.classList.remove("sel")); b.classList.add("sel"); usel=b; });
+der.querySelectorAll(".pieza").forEach(b=>b.onclick=()=>{
+  if(!usel||b.classList.contains("ok")) return;
+  if(usel.dataset.i===b.dataset.i){ usel.classList.replace("sel","ok"); b.classList.add("ok"); uok++; usel=null; umarc.textContent = uok===U.length?"¡Muy bien! Has unido todas las frases.":`${uok}/${U.length}`; }
+  else { b.classList.remove("mal"); void b.offsetWidth; b.classList.add("mal"); }
+});
+
+// 3. construir
+const F = [
+ "Como llovía, nos quedamos en casa.",
+ "Llegué tarde porque había mucho tráfico.",
+ "Aunque hacía frío, salimos a caminar.",
+ "No conocía la costumbre, por eso me sorprendió.",
+ "Me gusta el tinto; sin embargo, prefiero el té.",
+ "Estaba cansado, así que me acosté temprano."
+];
+const CON = ["Como","porque","Aunque","por","eso","sin","embargo,","así","que"];
+let fi=0, fok=0;
+function cargaFrase(){
+  const pal = F[fi].split(" ");
+  obj.innerHTML=""; obj.classList.remove("ok"); cSig.hidden=true; cComprobar.hidden=false;
+  fic.innerHTML = mezcla(pal.map((p,i)=>[p,i])).map(([p,i])=>`<button class="fi${CON.includes(p)?' con':''}" data-i="${i}">${p}</button>`).join("");
+  fic.querySelectorAll(".fi").forEach(b=>b.onclick=()=>{ (b.parentElement===fic?obj:fic).appendChild(b); });
+  cmarc.textContent = `Frase ${fi+1} de ${F.length}`;
+}
+cComprobar.onclick=()=>{
+  const r=[...obj.querySelectorAll(".fi")].map(b=>b.textContent).join(" ");
+  if(r===F[fi]){ obj.classList.add("ok"); fok++; cComprobar.hidden=true; cSig.hidden = fi===F.length-1; cmarc.textContent = fi===F.length-1?`¡Terminado! ${fok} de ${F.length} frases.`:"¡Correcto!"; obj.querySelectorAll(".fi").forEach(b=>b.onclick=null); }
+  else { obj.classList.remove("mal"); void obj.offsetWidth; obj.classList.add("mal"); cmarc.textContent = fic.children.length?"Todavía faltan palabras.":"Revisa el orden e inténtalo otra vez."; }
+};
+cSig.onclick=()=>{ fi++; cargaFrase(); };
+cargaFrase();
+
+// 4. reto
+const R = [
+ {t:"Llevo siempre paraguas ___ en Bogotá llueve casi todos los días.", o:["porque","aunque","así que"], x:"Explica la causa: porque."},
+ {t:"___ no hablaba bien español, al principio me costaba entender.", o:["Como","Por eso","Sin embargo"], x:"Causa al principio de la frase: como."},
+ {t:"El almuerzo aquí es largo, ___ mucha gente come en casa.", o:["así que","aunque","porque"], x:"Lo que pasa como resultado: así que."},
+ {t:"___ la bandeja paisa es enorme, me la comí toda.", o:["Aunque","Porque","Así que"], x:"Algo inesperado: aunque."},
+ {t:"Me gusta mucho el tinto; ___, después de las seis prefiero no tomarlo.", o:["sin embargo","porque","por eso"], x:"Contraste entre dos ideas: sin embargo."},
+ {t:"Los domingos hay ciclovía; ___, salgo a montar en bicicleta con mis amigos.", o:["por eso","aunque","como"], x:"Consecuencia: por eso."},
+ {t:"Pedí un tinto ___ quería probar el café colombiano.", o:["porque","sin embargo","así que"], x:"Causa: porque."},
+ {t:"La gente me saluda en la calle ___ no me conoce.", o:["aunque","porque","por lo tanto"], x:"Contraste: aunque."},
+ {t:"No sabía que había que reservar; ___, me quedé sin mesa.", o:["por lo tanto","aunque","como"], x:"Consecuencia formal: por lo tanto."},
+ {t:"Compré arepas en la calle, ___ estaban recién hechas.", o:["ya que","aunque","sin embargo"], x:"Causa: ya que."}
+];
+let ri=0, rbien=0, rfallo=false;
+function cargaReto(){
+  const r=R[ri]; rprog.style.width=(100*ri/R.length)+"%";
+  rsit.innerHTML = r.t.replace("___",'<span class="h">...</span>');
+  rexp.textContent=""; rsig.hidden=true; rfallo=false;
+  rops.innerHTML = mezcla(r.o.map((o,j)=>[o,j===0])).map(([o,c])=>`<button class="op" data-c="${c}">${o}</button>`).join("");
+  rops.querySelectorAll(".op").forEach(b=>b.onclick=()=>{
+    if(!rsig.hidden) return;
+    if(b.dataset.c==="true"){ b.classList.add("bien"); rsit.querySelector(".h").textContent=b.textContent; rexp.textContent=r.x; if(!rfallo) rbien++;
+      if(ri<R.length-1) rsig.hidden=false; else { rprog.style.width="100%"; rmarc.textContent=`Reto terminado: ${rbien} de ${R.length} a la primera.`; } }
+    else { b.classList.add("fallo"); rfallo=true; }
+  });
+  rmarc.textContent=`${ri+1} de ${R.length}`;
+}
+rsig.onclick=()=>{ ri++; cargaReto(); };
+cargaReto();
+
+// 5. opinión
+["porque","como","ya que","aunque","sin embargo","por eso","así que","por lo tanto"].forEach(c=>{ const b=document.createElement("button"); b.textContent=c; b.onclick=()=>{ const t=borrador, p=t.selectionStart??t.value.length; t.value=t.value.slice(0,p)+c+" "+t.value.slice(p); t.focus(); t.selectionStart=t.selectionEnd=p+c.length+1; }; chips.appendChild(b); });
+copiar.onclick=async()=>{ try{ await navigator.clipboard.writeText(borrador.value); cop.textContent="Copiado. Pégalo en tu documento de Google Docs."; }catch(e){ borrador.select(); cop.textContent="Selecciona el texto y cópialo con Ctrl+C."; } };
+creditos.innerHTML = C.map(x=>`<div><b>${x.p}</b>: <a href="${PAG(x.f)}" target="_blank" rel="noopener">${x.f}</a>, ${x.a}, ${x.l}</div>`).join("");
+lucide.createIcons();
+</script>
+</body>
+</html>
