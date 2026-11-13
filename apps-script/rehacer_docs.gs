@@ -209,3 +209,16 @@ function subirImagenesMateriales() {
       if (limpio !== t) { form.setTitle(limpio); ff.setName(limpio); out.push('titulo: ' + limpio); } } catch (e) { out.push('form? ' + ff.getName()); } } }
   Logger.log(out.join(' | ')); return out;
 }
+
+// Sustituye el contenido de las imágenes de sesiones y de la guía sin cambiar el enlace.
+function actualizarImagenesSesiones() {
+  var base = 'https://raw.githubusercontent.com/YULIETH06/click-and-learn-ele-b1/main/assets/img/';
+  var lista = [['m1-sesiones.png', '1YJEt5C5gpDJgrbCuKryumou6Ei4sFyFo'], ['m2-sesiones.png', '1MUYzpDG2a5huWyZuHpI5vUSrSM45lotR'], ['m3-sesiones.png', '1-Y2zcwcXZBSdEtK5S9Lk5WBGk15MzLc0'], ['m4-sesiones.png', '1FsG1Ue0ANKEC5ss2Da-Q9h40_HydQcCd'], ['guia-del-curso.png', '1NoQ4KrpC6k25i9IxkSxD4LXPmYxpexT6']];
+  var out = [];
+  lista.forEach(function (v) {
+    var blob = UrlFetchApp.fetch(base + v[0] + '?v=2').getBlob();
+    var r = UrlFetchApp.fetch('https://www.googleapis.com/upload/drive/v3/files/' + v[1] + '?uploadType=media', {method: 'patch', contentType: 'image/png', payload: blob.getBytes(), headers: {Authorization: 'Bearer ' + ScriptApp.getOAuthToken()}, muteHttpExceptions: true});
+    out.push(v[0] + ' ' + r.getResponseCode() + ' ' + blob.getBytes().length);
+  });
+  Logger.log(out.join(' | ')); return out;
+}
