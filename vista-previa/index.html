@@ -11,8 +11,8 @@
 <style>
   main{position:relative;z-index:1}
   .portada{padding:56px 0 30px;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
-  .portada h1{font-size:clamp(2.4rem,6vw,4rem);color:var(--noche)}
-  .portada h1 em{font-style:normal;background:linear-gradient(90deg,var(--mar),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .portada h1{font-size:clamp(2.2rem,5vw,3.25rem);color:var(--noche)}
+  .portada h1 em{font-style:normal;color:var(--mar-osc);background:linear-gradient(transparent 62%,rgba(255,201,60,.45) 62%);padding:0 .08em}
   .portada p{font-size:1.15rem;color:var(--suave);margin:16px 0 26px;max-width:540px}
   .portada .acciones{display:flex;flex-wrap:wrap;gap:12px}
   .collage{position:relative;height:340px}
@@ -30,11 +30,11 @@
   .mod{display:block;text-decoration:none;border-radius:26px;padding:26px;color:#fff;position:relative;overflow:hidden;box-shadow:var(--sombra);transition:transform .2s}
   .mod:hover{transform:translateY(-6px) rotate(-.4deg)}
   .mod .num{font-family:"Poppins";font-weight:600;font-size:.82rem;letter-spacing:.06em;opacity:.85}
-  .mod h3{font-size:1.6rem;margin:6px 0 8px}
+  .mod h3{font-size:1.5rem;margin:6px 60px 8px 0}
   .mod p{margin:0 0 14px;opacity:.95}
   .mod .tags{display:flex;flex-wrap:wrap;gap:6px}
   .mod .tags span{background:rgba(255,255,255,.22);padding:4px 10px;border-radius:999px;font-weight:500;font-size:.8rem}
-  .mod .emoji{position:absolute;right:18px;bottom:14px;opacity:.28}.mod .emoji svg.lucide{width:72px;height:72px;stroke-width:1.5}
+  .mod .emoji{position:absolute;right:20px;top:18px;opacity:.3}.mod .emoji svg.lucide{width:44px;height:44px;stroke-width:1.6}
   .camino{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:8px 0 40px}
   .paso{background:#fff;border-radius:18px;padding:16px;text-align:center;box-shadow:var(--sombra)}
   .paso span{display:grid;place-items:center;width:48px;height:48px;margin:0 auto;border-radius:14px;background:var(--crema);color:var(--noche)}.paso span svg.lucide{width:24px;height:24px}.paso b{display:block;margin-top:6px}.paso small{color:var(--suave);font-weight:400}
@@ -75,10 +75,10 @@
 
   <h2 class="sec" id="modulos">Los módulos</h2>
   <div class="modulos">
-    <a class="mod" href="modulo.html?m=1" style="background:linear-gradient(135deg,#2f6fed,#5b8cff)"><span class="num">MÓDULO 1 · SEMANAS 1 Y 2</span><h3>Antes y ahora: mi vida en dos tiempos</h3><p>Cuenta cómo era tu vida antes de un gran cambio y cómo es ahora.</p><div class="tags"><span>imperfecto</span><span>soler + infinitivo</span><span>ya no / todavía</span></div><span class="emoji"><i data-lucide="rewind"></i></span></a>
-    <a class="mod" href="modulo.html?m=2" style="background:linear-gradient(135deg,#ff6b5b,#ff9472)"><span class="num">MÓDULO 2 · SEMANA 3</span><h3>Causas, consecuencias y contrastes</h3><p>Explica por qué pasan las cosas y da tu opinión sobre las costumbres.</p><div class="tags"><span>porque / como</span><span>así que / por eso</span><span>aunque / sin embargo</span></div><span class="emoji"><i data-lucide="link"></i></span></a>
-    <a class="mod" href="modulo.html?m=3" style="background:linear-gradient(135deg,#7b5cff,#a48bff)"><span class="num">MÓDULO 3 · SEMANAS 4 Y 5</span><h3>Te cuento lo que me pasó</h3><p>Narra una experiencia que no olvidarás: escenario, acciones y sorpresas.</p><div class="tags"><span>indefinido / imperfecto</span><span>pluscuamperfecto</span><span>de repente</span></div><span class="emoji"><i data-lucide="clapperboard"></i></span></a>
-    <a class="mod" href="modulo.html?m=4" style="background:linear-gradient(135deg,#0ea5a4,#36c9b4)"><span class="num">MÓDULO 4 · SEMANA 6</span><h3>Proyecto cultural: tradiciones que se celebran</h3><p>Presenta en vídeo una tradición de tu país y compárala con el Carnaval.</p><div class="tags"><span>todo el curso</span><span>léxico de fiestas</span><span>presentación oral</span></div><span class="emoji"><i data-lucide="drama"></i></span></a>
+    <a class="mod" href="modulo.html?m=1" style="background:#2f62d8"><span class="num">MÓDULO 1 · SEMANAS 1 Y 2</span><h3>Antes y ahora: mi vida en dos tiempos</h3><p>Cuenta cómo era tu vida antes de un gran cambio y cómo es ahora.</p><div class="tags"><span>imperfecto</span><span>soler + infinitivo</span><span>ya no / todavía</span></div><span class="emoji"><i data-lucide="rewind"></i></span></a>
+    <a class="mod" href="modulo.html?m=2" style="background:#e5604f"><span class="num">MÓDULO 2 · SEMANA 3</span><h3>Causas, consecuencias y contrastes</h3><p>Explica por qué pasan las cosas y da tu opinión sobre las costumbres.</p><div class="tags"><span>porque / como</span><span>así que / por eso</span><span>aunque / sin embargo</span></div><span class="emoji"><i data-lucide="link"></i></span></a>
+    <a class="mod" href="modulo.html?m=3" style="background:#6d52e0"><span class="num">MÓDULO 3 · SEMANAS 4 Y 5</span><h3>Te cuento lo que me pasó</h3><p>Narra una experiencia que no olvidarás: escenario, acciones y sorpresas.</p><div class="tags"><span>indefinido / imperfecto</span><span>pluscuamperfecto</span><span>de repente</span></div><span class="emoji"><i data-lucide="clapperboard"></i></span></a>
+    <a class="mod" href="modulo.html?m=4" style="background:#0e9493"><span class="num">MÓDULO 4 · SEMANA 6</span><h3>Proyecto cultural: tradiciones que se celebran</h3><p>Presenta en vídeo una tradición de tu país y compárala con el Carnaval.</p><div class="tags"><span>todo el curso</span><span>léxico de fiestas</span><span>presentación oral</span></div><span class="emoji"><i data-lucide="drama"></i></span></a>
   </div>
 
   <h2 class="sec" style="margin-top:40px">Cada módulo, el mismo camino</h2>
