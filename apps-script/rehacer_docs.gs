@@ -189,3 +189,23 @@ function auditarAcceso() {
       out.push((form.isAcceptingResponses() ? 'ok' : 'CERRADO') + ' form ' + ff.getName() + (form.requiresLogin() ? ' (login)' : '') + ' ' + form.getPublishedUrl().split('/e/')[1].slice(0, 12)); } }
   Logger.log(out.join('\n')); return out;
 }
+
+// Imágenes de los materiales del aula (estilo Poppins + iconos) y títulos de formularios sin emojis.
+function subirImagenesMateriales() {
+  var c = DriveApp.getFoldersByName('Español Online B1 · Click & Learn · Documentos').next();
+  var base = 'https://raw.githubusercontent.com/YULIETH06/click-and-learn-ele-b1/main/assets/img/classroom/';
+  var nombres = {presentacion: 'Bienvenida · Los módulos del curso', meet: 'Sesiones en directo · Calendario', m1_practica: 'M1 · Práctica a tu ritmo', m1_tarea: 'M1 · Tarea final', m2_practica: 'M2 · Práctica a tu ritmo', m2_tarea: 'M2 · Tarea final', m3_practica: 'M3 · Práctica a tu ritmo', m3_tarea: 'M3 · Tarea final', m4_tarea: 'M4 · Tarea final', foro_vocabulario: 'Foro del curso y vocabulario', autoevaluacion: 'Autoevaluación y cierre', diario: 'Diario de aprendizaje'};
+  var out = [];
+  Object.keys(nombres).forEach(function (k) {
+    var n = nombres[k] + '.png'; var it = c.getFilesByName(n);
+    var f = it.hasNext() ? it.next() : c.createFile(UrlFetchApp.fetch(base + k + '.png').getBlob().setName(n));
+    f.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
+    out.push(k + '=' + f.getId());
+  });
+  var fit = DriveApp.getFoldersByName('Español Online B1 · Click & Learn · Formularios');
+  while (fit.hasNext()) { var fc = fit.next(); if (fc.isTrashed()) continue; var fs = fc.getFilesByType(MimeType.GOOGLE_FORMS);
+    while (fs.hasNext()) { var ff = fs.next(); if (ff.isTrashed()) continue; try { var form = FormApp.openById(ff.getId()); var t = form.getTitle();
+      var limpio = t.replace(/^[^A-Za-zÁÉÍÓÚáéíóúÑñ¿¡]+/, '').trim();
+      if (limpio !== t) { form.setTitle(limpio); ff.setName(limpio); out.push('titulo: ' + limpio); } } catch (e) { out.push('form? ' + ff.getName()); } } }
+  Logger.log(out.join(' | ')); return out;
+}
