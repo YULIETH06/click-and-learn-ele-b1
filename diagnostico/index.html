@@ -6,7 +6,7 @@
 <title>Prueba diagnóstica · Español Online B1: Click &amp; Learn</title>
 <meta name="description" content="Prueba diagnóstica interactiva de competencia léxico-gramatical para estudiantes de español de nivel B1.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/estilo.css">
 <style>
   main{position:relative;z-index:1;padding:28px 0 10px}
@@ -16,13 +16,13 @@
   .hero h1{font-size:clamp(2.1rem,5vw,3.3rem);color:var(--noche)}
   .hero h1 span{background:linear-gradient(90deg,var(--mar),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
   .hero p.lead{font-size:1.12rem;color:var(--suave);margin:14px 0 22px}
-  .brujula{font-size:7.5rem;text-align:center;animation:rebote 3s ease-in-out infinite;filter:drop-shadow(0 18px 20px rgba(30,42,74,.18))}
+  .brujula{display:grid;place-items:center;color:var(--coral);animation:rebote 6s ease-in-out infinite}.brujula svg.lucide{width:190px;height:190px;stroke-width:1.2}
   .secciones{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:18px 0 24px}
   .sec-mini{display:flex;gap:12px;align-items:center;padding:14px;border-radius:16px;background:#fff;border:2px solid var(--linea)}
   .sec-mini .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:1.4rem;color:#fff;flex:none}
   .sec-mini b{display:block;font-size:.98rem}.sec-mini small{color:var(--suave);font-weight:700}
   .campo{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
-  .campo label{font-weight:800}
+  .campo label{font-weight:600}
   .campo input{font:inherit;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:#fff;font-size:1.05rem;outline:none}
   .campo input:focus{border-color:var(--mar)}
   .reglas{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
@@ -30,54 +30,55 @@
   .progreso{display:flex;align-items:center;gap:14px;margin-bottom:18px}
   .pista{flex:1;height:14px;border-radius:999px;background:#fff;border:2px solid var(--linea);overflow:hidden}
   .pista i{display:block;height:100%;width:0;border-radius:999px;background:var(--mar);transition:width .5s cubic-bezier(.2,.8,.2,1),background .3s}
-  .contador{font-weight:800;color:var(--suave);min-width:62px;text-align:right}
+  .contador{font-weight:600;color:var(--suave);min-width:62px;text-align:right}
   /* pregunta */
   .cab-sec{display:flex;align-items:center;gap:10px;margin-bottom:16px}
   .cab-sec .ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;font-size:1.25rem}
-  .cab-sec b{font-family:"Baloo 2";font-size:1.15rem}
-  .frase{font-size:clamp(1.25rem,3vw,1.65rem);font-weight:700;color:var(--noche);margin:6px 0 24px;line-height:1.45}
+  .cab-sec b{font-family:"Poppins";font-weight:600;font-size:1.1rem}
+  .frase{font-size:clamp(1.2rem,3vw,1.55rem);font-weight:600;color:var(--noche);margin:6px 0 24px;line-height:1.45}
   .hueco{display:inline-block;min-width:110px;border-bottom:4px dashed var(--c,var(--mar));text-align:center;color:var(--c,var(--mar));padding:0 6px;transition:all .25s}
   .hueco.lleno{border-bottom-style:solid;background:color-mix(in srgb,var(--c) 12%,transparent);border-radius:8px 8px 0 0}
   .opciones{display:grid;gap:12px}
   .opcion{display:flex;align-items:center;gap:14px;text-align:left;padding:16px 18px;border-radius:16px;background:#fff;border:3px solid var(--linea);font-size:1.12rem;font-weight:700;color:var(--tinta);transition:transform .12s,border-color .2s,background .2s}
   .opcion:hover{transform:translateX(4px);border-color:var(--c)}
-  .opcion .letra{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--crema);font-weight:800;flex:none;transition:all .2s}
+  .opcion .letra{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--crema);font-weight:600;flex:none;transition:all .2s}
   .opcion.elegida{border-color:var(--c);background:color-mix(in srgb,var(--c) 10%,#fff)}
   .opcion.elegida .letra{background:var(--c);color:#fff}
   .nav{display:flex;justify-content:space-between;gap:12px;margin-top:24px}
   /* intro sección */
   .intro-sec{text-align:center;padding:46px 28px}
-  .intro-sec .ico-g{width:96px;height:96px;border-radius:28px;margin:0 auto 18px;display:grid;place-items:center;font-size:3rem;color:#fff;box-shadow:var(--sombra);animation:rebote 2.4s ease-in-out infinite}
+  .intro-sec .ico-g{width:96px;height:96px;border-radius:28px;margin:0 auto 18px;display:grid;place-items:center;font-size:3rem;color:#fff;box-shadow:var(--sombra);animation:rebote 6s ease-in-out infinite}.intro-sec .ico-g svg.lucide{width:46px;height:46px}
   .intro-sec h2{font-size:2rem}.intro-sec p{color:var(--suave);font-size:1.08rem;max-width:520px;margin:10px auto 24px}
   /* resultados */
   .res-cab{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
   .anillo{width:180px;height:180px;position:relative}
   .anillo svg{transform:rotate(-90deg)}
   .anillo .num{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
-  .anillo .num b{font-family:"Baloo 2";font-size:2.6rem;line-height:1;color:var(--noche)}.anillo .num small{color:var(--suave);font-weight:800}
+  .anillo .num b{font-family:"Poppins";font-weight:700;font-size:2.4rem;line-height:1;color:var(--noche)}.anillo .num small{color:var(--suave);font-weight:600}
   .barras{display:grid;gap:16px;margin-top:8px}
-  .barra .fila{display:flex;justify-content:space-between;font-weight:800;margin-bottom:6px;gap:10px}
+  .barra .fila{display:flex;justify-content:space-between;font-weight:600;margin-bottom:6px;gap:10px}
   .barra .pista{height:18px}
   .nivel{font-size:.8rem;padding:3px 10px;border-radius:999px;color:#fff;white-space:nowrap}
   .recos{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:6px}
   .reco{border-radius:18px;padding:18px;background:var(--crema);border-left:6px solid var(--c)}
   .reco b{display:block;margin-bottom:4px}
   details.revision{margin-top:8px}
-  details.revision summary{cursor:pointer;font-weight:800;padding:12px 0}
+  details.revision summary{cursor:pointer;font-weight:600;padding:12px 0}
   .item-rev{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--linea)}
   .item-rev .ok{color:var(--verde)}.item-rev .ko{color:var(--coral)}
   .item-rev small{color:var(--suave)}
   .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
   .aviso{margin-top:12px;font-weight:700;color:var(--mar-osc)}
   canvas#confeti{position:fixed;inset:0;pointer-events:none;z-index:50}
-  @media (max-width:760px){.hero{grid-template-columns:1fr}.brujula{font-size:5rem;order:-1}.secciones,.recos{grid-template-columns:1fr}.res-cab{grid-template-columns:1fr;justify-items:center;text-align:center}}
+  @media (max-width:760px){.hero{grid-template-columns:1fr}.brujula{order:-1}.brujula svg.lucide{width:110px;height:110px}.secciones,.recos{grid-template-columns:1fr}.res-cab{grid-template-columns:1fr;justify-items:center;text-align:center}}
 </style>
+<script src="https://unpkg.com/lucide@0.441.0/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 <div class="fondo-confeti" aria-hidden="true"></div>
 <header class="barra-sup"><div class="envoltura">
-  <a class="marca" href="../index.html"><span class="logo">🌎</span><span>Click &amp; Learn<small>ESPAÑOL ONLINE B1</small></span></a>
-  <span class="chip">🧭 Prueba diagnóstica</span>
+  <a class="marca" href="../index.html"><span class="logo"><i data-lucide="message-circle"></i></span><span>Click &amp; Learn<small>ESPAÑOL ONLINE B1</small></span></a>
+  <span class="chip"><i data-lucide="compass"></i> Prueba diagnóstica</span>
 </div></header>
 
 <main class="envoltura">
@@ -89,10 +90,10 @@
         <p class="lead">Antes del curso, descubre tu punto de partida en cuatro áreas clave del nivel B1. No es un examen: es tu brújula para aprovechar mejor las seis semanas.</p>
         <div class="secciones" id="lista-secciones"></div>
         <div class="campo"><label for="nombre">¿Cómo te llamas?</label><input id="nombre" autocomplete="name" placeholder="Escribe tu nombre y apellido"></div>
-        <div class="reglas"><span class="chip">⏱️ 30 minutos aprox.</span><span class="chip">🧩 30 preguntas</span><span class="chip">📵 Sin diccionario ni traductor</span></div>
-        <button class="boton coral" id="btn-empezar">Empezar la prueba ✨</button>
+        <div class="reglas"><span class="chip"><i data-lucide="timer"></i> 30 minutos aprox.</span><span class="chip"><i data-lucide="list-checks"></i> 30 preguntas</span><span class="chip"><i data-lucide="ban"></i> Sin diccionario ni traductor</span></div>
+        <button class="boton coral" id="btn-empezar">Empezar la prueba <i data-lucide="arrow-right"></i></button>
       </div>
-      <div class="brujula" aria-hidden="true">🧭</div>
+      <div class="brujula" aria-hidden="true"><i data-lucide="compass"></i></div>
     </div>
   </section>
 
@@ -120,17 +121,17 @@
       </div>
     </div>
     <div class="tarjeta entrar" style="margin-top:18px;animation-delay:.1s">
-      <h3 style="font-size:1.4rem;margin-bottom:14px">📊 Tu mapa por áreas</h3>
+      <h3 style="font-size:1.4rem;margin-bottom:14px">Tu mapa por áreas</h3>
       <div class="barras" id="barras"></div>
     </div>
     <div class="tarjeta entrar" style="margin-top:18px;animation-delay:.2s">
-      <h3 style="font-size:1.4rem;margin-bottom:14px">🗺️ Tu ruta en el curso</h3>
+      <h3 style="font-size:1.4rem;margin-bottom:14px">Tu ruta en el curso</h3>
       <div class="recos" id="recos"></div>
-      <details class="revision"><summary>🔎 Revisar mis respuestas</summary><div id="revision"></div></details>
+      <details class="revision"><summary>Revisar mis respuestas</summary><div id="revision"></div></details>
       <div class="acciones">
-        <button class="boton mar" id="btn-enviar">📨 Enviar resultados a mi profesor</button>
-        <button class="boton claro" id="btn-copiar">📋 Copiar mis resultados</button>
-        <a class="boton claro" href="../index.html">🏠 Ir al curso</a>
+        <button class="boton mar" id="btn-enviar"><i data-lucide="send"></i> Enviar resultados a mi profesor</button>
+        <button class="boton claro" id="btn-copiar"><i data-lucide="copy"></i> Copiar mis resultados</button>
+        <a class="boton claro" href="../index.html"><i data-lucide="house"></i> Ir al curso</a>
       </div>
       <p class="aviso" id="aviso" hidden></p>
     </div>
@@ -144,7 +145,7 @@
 const ENVIO = { url: "https://docs.google.com/forms/d/e/1FAIpQLSeT2ygSvEww1w-BxTdmfRlGNYFiB8gtNMNsXK_dYmTzc12h-Q/formResponse", campos: { nombre: "entry.98334864", total: "entry.556930513", pasados: "entry.861416368", perifrasis: "entry.157430382", conectores: "entry.966702281", lexico: "entry.1919639492", detalle: "entry.881288378" } };
 
 const SECCIONES = [
-  { id:"pasados", nombre:"Los tiempos del pasado", ico:"⏳", color:"#2f6fed", desc:"Indefinido, imperfecto y pluscuamperfecto: escenario, acciones y lo que había pasado antes.", modulo:"Módulos 1 y 3",
+  { id:"pasados", nombre:"Los tiempos del pasado", ico:"history", color:"#2f6fed", desc:"Indefinido, imperfecto y pluscuamperfecto: escenario, acciones y lo que había pasado antes.", modulo:"Módulos 1 y 3",
     preguntas:[
       ["Cuando era pequeño, ___ todos los veranos a casa de mis abuelos.",["fui","iba","había ido"],1,"Costumbre en el pasado → imperfecto."],
       ["Ayer ___ a Laura en el supermercado.",["veía","vi","había visto"],1,"Acción terminada en un momento concreto (ayer) → indefinido."],
@@ -156,7 +157,7 @@ const SECCIONES = [
       ["La casa de mis abuelos ___ grande y ___ un jardín precioso.",["fue / tuvo","era / tenía","había sido / había tenido"],1,"Descripción → imperfecto."],
       ["De repente, ___ a llover y todos corrimos a buscar refugio.",["empezaba","empezó","había empezado"],1,"De repente + acción que hace avanzar la historia → indefinido."],
       ["Cuando llegué a Colombia, yo ya ___ español durante dos años.",["estudié","estudiaba","había estudiado"],2,"Ya + acción anterior a otro momento del pasado → pluscuamperfecto."]]},
-  { id:"perifrasis", nombre:"Soler y las perífrasis", ico:"🔁", color:"#7b5cff", desc:"Soler, ya no, dejar de, volver a, acabar de y seguir + gerundio.", modulo:"Módulos 1 y 3",
+  { id:"perifrasis", nombre:"Soler y las perífrasis", ico:"repeat", color:"#7b5cff", desc:"Soler, ya no, dejar de, volver a, acabar de y seguir + gerundio.", modulo:"Módulos 1 y 3",
     preguntas:[
       ["Cuando vivía en Londres, ___ ir al trabajo en bicicleta.",["solía","solí","suelo"],0,"Soler en imperfecto (solía) para costumbres del pasado."],
       ["Hace tres años ___ fumar y desde entonces me siento mucho mejor.",["dejé de","empecé a","volví a"],0,"Dejar de + infinitivo = interrumpir un hábito."],
@@ -164,7 +165,7 @@ const SECCIONES = [
       ["El médico me prohibió el azúcar, pero la semana pasada ___ comer dulces.",["acabé de","volví a","dejé de"],1,"Volver a + infinitivo = repetir algo."],
       ["No puedo hablar ahora: ___ llegar del aeropuerto y estoy agotado.",["acabo de","vuelvo a","dejo de"],0,"Acabar de + infinitivo = algo que ha pasado hace muy poco."],
       ["A pesar del ruido, el profesor ___ explicando la lección.",["siguió","dejó","acabó"],0,"Seguir + gerundio = continuar una acción."]]},
-  { id:"conectores", nombre:"Los conectores", ico:"🔗", color:"#ff6b5b", desc:"Causa, consecuencia y contraste para explicar y opinar.", modulo:"Módulo 2",
+  { id:"conectores", nombre:"Los conectores", ico:"link", color:"#ff6b5b", desc:"Causa, consecuencia y contraste para explicar y opinar.", modulo:"Módulo 2",
     preguntas:[
       ["___ no tenía coche, tuve que tomar un taxi.",["Porque","Como","Por eso"],1,"Causa al principio de la frase → como."],
       ["Estaba muy cansada; ___, me acosté temprano.",["sin embargo","aunque","por eso"],2,"Consecuencia → por eso."],
@@ -173,7 +174,7 @@ const SECCIONES = [
       ["No fui a la fiesta ___ tenía que estudiar.",["así que","aunque","porque"],2,"Causa después de la idea principal → porque."],
       ["Perdí el autobús, ___ llegué tarde a la reunión.",["así que","como","aunque"],0,"Consecuencia → así que."],
       ["Decidí aprender español ___ quería trabajar en Latinoamérica.",["sin embargo","ya que","por lo tanto"],1,"Causa → ya que."]]},
-  { id:"lexico", nombre:"Léxico y colocaciones", ico:"🧩", color:"#0ea5a4", desc:"Las palabras que van juntas: cometer un error, tomar una decisión...", modulo:"Módulos 1, 3 y 4",
+  { id:"lexico", nombre:"Léxico y colocaciones", ico:"puzzle", color:"#0ea5a4", desc:"Las palabras que van juntas: cometer un error, tomar una decisión...", modulo:"Módulos 1, 3 y 4",
     preguntas:[
       ["En el examen ___ un error muy grave.",["hice","cometí","tuve"],1,"En español se dice cometer un error."],
       ["En la fiesta lo ___ muy bien: bailamos toda la noche.",["pasamos","tuvimos","hicimos"],0,"Pasarlo bien = divertirse."],
@@ -195,7 +196,7 @@ function indiceGlobal(){ let n=0; for(let i=0;i<estado.sec;i++) n+=SECCIONES[i].
 function clave(s,p){ return s+"-"+p; }
 
 // inicio
-$("#lista-secciones").innerHTML = SECCIONES.map(s=>`<div class="sec-mini"><span class="ico" style="background:${s.color}">${s.ico}</span><span><b>${s.nombre}</b><small>${s.preguntas.length} preguntas</small></span></div>`).join("");
+$("#lista-secciones").innerHTML = SECCIONES.map(s=>`<div class="sec-mini"><span class="ico" style="background:${s.color}"><i data-lucide="${s.ico}"></i></span><span><b>${s.nombre}</b><small>${s.preguntas.length} preguntas</small></span></div>`).join("");
 cargar(); if(estado.nombre) $("#nombre").value = estado.nombre;
 $("#btn-empezar").onclick = ()=>{
   const n=$("#nombre").value.trim(); if(!n){ $("#nombre").focus(); $("#nombre").style.borderColor="var(--coral)"; return; }
@@ -204,10 +205,10 @@ $("#btn-empezar").onclick = ()=>{
 
 function introSeccion(){
   const s=SECCIONES[estado.sec];
-  $("#intro-contenido").innerHTML = `<div class="ico-g" style="background:${s.color}">${s.ico}</div>
+  $("#intro-contenido").innerHTML = `<div class="ico-g" style="background:${s.color}"><i data-lucide="${s.ico}"></i></div>
     <span class="chip">Parte ${estado.sec+1} de ${SECCIONES.length}</span>
     <h2 style="margin-top:12px">${s.nombre}</h2><p>${s.desc}</p>
-    <button class="boton" style="background:${s.color}" id="btn-sec">¡Vamos! →</button>`;
+    <button class="boton" style="background:${s.color}" id="btn-sec">¡Vamos! <i data-lucide="arrow-right"></i></button>`;
   $("#intro-contenido").classList.remove("entrar"); void $("#intro-contenido").offsetWidth; $("#intro-contenido").classList.add("entrar");
   mostrar("#p-intro"); $("#btn-sec").onclick=()=>{ mostrarPregunta(); };
 }
@@ -221,11 +222,11 @@ function mostrarPregunta(){
   const huecoTxt = elegida!=null ? q[1][elegida] : "&nbsp;";
   const frase = partes.map((t,i)=> i<partes.length-1 ? t+`<span class="hueco ${elegida!=null?'lleno':''}" id="hueco${i}">${elegida!=null ? (q[1][elegida].split(" / ")[i]||q[1][elegida]) : "&nbsp;"}</span>` : t).join("");
   const t=$("#tarjeta-pregunta"); t.style.setProperty("--c",s.color);
-  t.innerHTML = `<div class="cab-sec"><span class="ico" style="background:${s.color}">${s.ico}</span><b>${s.nombre}</b></div>
+  t.innerHTML = `<div class="cab-sec"><span class="ico" style="background:${s.color}"><i data-lucide="${s.ico}"></i></span><b>${s.nombre}</b></div>
     <p class="frase">${frase}</p>
     <div class="opciones">${q[1].map((o,i)=>`<button class="opcion ${elegida===i?'elegida':''}" data-i="${i}"><span class="letra">${LETRAS[i]}</span>${o}</button>`).join("")}</div>
-    <div class="nav"><button class="boton claro" id="btn-atras" ${g===0?'disabled':''}>← Atrás</button>
-    <button class="boton" style="background:${s.color}" id="btn-sig" ${elegida==null?'disabled':''}>${g===TOTAL-1?'Ver mis resultados 🎉':'Siguiente →'}</button></div>`;
+    <div class="nav"><button class="boton claro" id="btn-atras" ${g===0?'disabled':''}><i data-lucide="arrow-left"></i> Atrás</button>
+    <button class="boton" style="background:${s.color}" id="btn-sig" ${elegida==null?'disabled':''}>${g===TOTAL-1?'Ver mis resultados <i data-lucide="chart-column"></i>':'Siguiente <i data-lucide="arrow-right"></i>'}</button></div>`;
   t.classList.remove("entrar"); void t.offsetWidth; t.classList.add("entrar");
   t.querySelectorAll(".opcion").forEach(b=>b.onclick=()=>{
     const i=+b.dataset.i; estado.resp[k]=i; guardar();
@@ -259,22 +260,22 @@ function resultados(){
   const p=total/TOTAL;
   $("#res-titulo").textContent = `¡Buen trabajo, ${estado.nombre.split(" ")[0]}!`;
   $("#res-texto").textContent = p>=.8 ? "Tienes una base muy sólida. En el curso vas a ganar precisión y naturalidad." : p>=.5 ? "Tienes una buena base. El curso te ayudará a consolidar las áreas que todavía te cuestan." : "Este es tu punto de partida. El curso está pensado para que avances paso a paso, con mucha práctica.";
-  $("#barras").innerHTML = por.map(({s,ok,n})=>{ const [nv,col]=nivelDe(ok/n); return `<div class="barra"><div class="fila"><span>${s.ico} ${s.nombre}</span><span>${ok}/${n} <span class="nivel" style="background:${col}">${nv}</span></span></div><div class="pista"><i style="background:${s.color}" data-w="${ok/n*100}"></i></div></div>`; }).join("");
+  $("#barras").innerHTML = por.map(({s,ok,n})=>{ const [nv,col]=nivelDe(ok/n); return `<div class="barra"><div class="fila"><span>${s.nombre}</span><span>${ok}/${n} <span class="nivel" style="background:${col}">${nv}</span></span></div><div class="pista"><i style="background:${s.color}" data-w="${ok/n*100}"></i></div></div>`; }).join("");
   setTimeout(()=>document.querySelectorAll("#barras i").forEach(i=>i.style.width=i.dataset.w+"%"),250);
   const orden=[...por].sort((a,b)=>a.ok/a.n-b.ok/b.n);
-  $("#recos").innerHTML = orden.map(({s,ok,n},i)=>{ const pr=ok/n; const txt = pr>=.8 ? "¡Muy bien! Aprovecha las actividades para ampliar." : pr>=.5 ? "Presta especial atención a las actividades de práctica a tu ritmo." : "Empieza por el vídeo y las actividades de Educaplay, y repítelas las veces que necesites."; return `<div class="reco" style="--c:${s.color}"><b>${i===0&&pr<.8?'⭐ Prioridad: ':''}${s.nombre}</b><small style="color:var(--suave);font-weight:800">${s.modulo}</small><p style="margin:.4rem 0 0">${txt}</p></div>`; }).join("");
-  $("#revision").innerHTML = SECCIONES.map((s,si)=>s.preguntas.map((q,pi)=>{ const r=estado.resp[clave(si,pi)], ok=r===q[2]; return `<div class="item-rev"><span class="${ok?'ok':'ko'}">${ok?'✔':'✖'}</span><div>${q[0].replace(/___/g,`<b>${q[1][q[2]]}</b>`)}<br><small>${ok?'':'Tu respuesta: '+(r!=null?q[1][r]:'—')+' · '}${q[3]}</small></div></div>`; }).join("")).join("");
+  $("#recos").innerHTML = orden.map(({s,ok,n},i)=>{ const pr=ok/n; const txt = pr>=.8 ? "¡Muy bien! Aprovecha las actividades para ampliar." : pr>=.5 ? "Presta especial atención a las actividades de práctica a tu ritmo." : "Empieza por el vídeo y las actividades de Educaplay, y repítelas las veces que necesites."; return `<div class="reco" style="--c:${s.color}"><b>${i===0&&pr<.8?'Prioridad: ':''}${s.nombre}</b><small style="color:var(--suave);font-weight:600">${s.modulo}</small><p style="margin:.4rem 0 0">${txt}</p></div>`; }).join("");
+  $("#revision").innerHTML = SECCIONES.map((s,si)=>s.preguntas.map((q,pi)=>{ const r=estado.resp[clave(si,pi)], ok=r===q[2]; return `<div class="item-rev"><span class="${ok?'ok':'ko'}">${ok?'<i data-lucide="check"></i>':'<i data-lucide="x"></i>'}</span><div>${q[0].replace(/___/g,`<b>${q[1][q[2]]}</b>`)}<br><small>${ok?'':'Tu respuesta: '+(r!=null?q[1][r]:'—')+' · '}${q[3]}</small></div></div>`; }).join("")).join("");
   confeti();
 }
 function textoResumen(){ return `Prueba diagnóstica · Español Online B1: Click & Learn\nNombre: ${estado.nombre}\nTotal: ${resumen.total}/${TOTAL}\n`+resumen.por.map(x=>`${x.s.nombre}: ${x.ok}/${x.n}`).join("\n"); }
-$("#btn-copiar").onclick=async()=>{ try{ await navigator.clipboard.writeText(textoResumen()); aviso("✅ Resultados copiados. Pégalos en un mensaje a tu profesor."); }catch(e){ aviso(textoResumen()); } };
+$("#btn-copiar").onclick=async()=>{ try{ await navigator.clipboard.writeText(textoResumen()); aviso("Resultados copiados. Pégalos en un mensaje a tu profesor."); }catch(e){ aviso(textoResumen()); } };
 $("#btn-enviar").onclick=()=>{
   if(!ENVIO.url){ aviso("El envío automático aún no está activado. Usa «Copiar mis resultados» y envíaselos a tu profesor por Classroom."); return; }
   const d=new FormData(); const c=ENVIO.campos;
   d.append(c.nombre,estado.nombre); d.append(c.total,resumen.total+"/"+TOTAL);
   resumen.por.forEach(x=>d.append(c[x.s.id],x.ok+"/"+x.n));
   d.append(c.detalle,SECCIONES.map((sx,si)=>sx.preguntas.map((q,pi)=>{const r=estado.resp[clave(si,pi)];return (r===q[2]?"✔":"✖")+" "+q[0].slice(0,40)+" → "+(r!=null?q[1][r]:"—");}).join("\n")).join("\n"));
-  fetch(ENVIO.url,{method:"POST",mode:"no-cors",body:d}).then(()=>{ aviso("📨 ¡Enviado! Tu profesor ya tiene tus resultados."); $("#btn-enviar").disabled=true; try{localStorage.removeItem("diag-cl")}catch(e){} })
+  fetch(ENVIO.url,{method:"POST",mode:"no-cors",body:d}).then(()=>{ aviso("¡Enviado! Tu profesor ya tiene tus resultados."); $("#btn-enviar").disabled=true; try{localStorage.removeItem("diag-cl")}catch(e){} })
     .catch(()=>aviso("No se pudo enviar. Usa «Copiar mis resultados»."));
 };
 function aviso(t){ const a=$("#aviso"); a.hidden=false; a.textContent=t; }
@@ -285,5 +286,6 @@ function confeti(){
   let t=0; (function f(){ x.clearRect(0,0,cv.width,cv.height); ps.forEach(p=>{p.y+=p.vy;p.x+=p.vx;p.a+=.1; x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;x.fillRect(-p.r/2,-p.r/2,p.r,p.r*1.6);x.restore();}); if(++t<220) requestAnimationFrame(f); else x.clearRect(0,0,cv.width,cv.height); })();
 }
 </script>
+<script>if(window.lucide){lucide.createIcons();new MutationObserver(()=>{if(document.querySelector("i[data-lucide]"))lucide.createIcons();}).observe(document.body,{childList:true,subtree:true});}</script>
 </body>
 </html>

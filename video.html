@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Vídeo · Click &amp; Learn</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/estilo.css">
 <style>
   main{position:relative;z-index:1;padding:30px 0 10px}
@@ -14,14 +14,15 @@
   video{display:block;width:100%;height:auto}
   .acciones{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
 </style>
+<script src="https://unpkg.com/lucide@0.441.0/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 <div class="fondo-confeti" aria-hidden="true"></div>
 <header class="barra-sup"><div class="envoltura">
-  <a class="marca" href="index.html"><span class="logo">🌎</span><span>Click &amp; Learn<small>ESPAÑOL ONLINE B1</small></span></a>
+  <a class="marca" href="index.html"><span class="logo"><i data-lucide="message-circle"></i></span><span>Click &amp; Learn<small>ESPAÑOL ONLINE B1</small></span></a>
 </div></header>
 <main class="envoltura">
-  <span class="chip" id="chip">🎥 Vídeo</span>
+  <span class="chip" id="chip">Vídeo</span>
   <h1 id="titulo">Vídeo</h1>
   <div class="marco"><video id="v" controls playsinline preload="metadata"></video></div>
   <div class="acciones" id="acc"></div>
@@ -29,16 +30,17 @@
 <p class="pie">Español Online B1: Click &amp; Learn · Material de elaboración propia</p>
 <script>
 const V={
-  bienvenida:{t:'¡Bienvenidos a Click & Learn!',c:'👋 Presentación del curso',next:['diagnostico/','🧭 Haz la prueba diagnóstica']},
-  m1:{t:'¿Cómo era tu vida antes?',c:'⏪ Módulo 1 · El imperfecto y soler',next:['modulo.html?m=1','📘 Volver al módulo 1']},
-  m3:{t:'El escenario y la acción',c:'🎬 Módulo 3 · Contar una historia',next:['modulo.html?m=3','📘 Volver al módulo 3']}
+  bienvenida:{t:'¡Bienvenidos a Click & Learn!',c:'Presentación del curso',ci:'circle-play',next:['diagnostico/','Haz la prueba diagnóstica','compass']},
+  m1:{t:'¿Cómo era tu vida antes?',c:'Módulo 1 · El imperfecto y soler',ci:'rewind',next:['modulo.html?m=1','Volver al módulo 1','arrow-left']},
+  m3:{t:'El escenario y la acción',c:'Módulo 3 · Contar una historia',ci:'clapperboard',next:['modulo.html?m=3','Volver al módulo 3','arrow-left']}
 };
 const k=new URLSearchParams(location.search).get('v')||'bienvenida', d=V[k]||V.bienvenida;
 document.title=d.t+' · Click & Learn';
 document.getElementById('titulo').textContent=d.t;
-document.getElementById('chip').textContent=d.c;
+document.getElementById('chip').innerHTML=`<i data-lucide="${d.ci}"></i> ${d.c}`;
 const v=document.getElementById('v'); v.src='assets/videos/'+(V[k]?k:'bienvenida')+'.mp4'; v.poster='assets/videos/'+(V[k]?k:'bienvenida')+'.jpg';
-document.getElementById('acc').innerHTML=`<a class="boton coral" href="${d.next[0]}">${d.next[1]}</a><a class="boton claro" href="index.html">🏠 Portada</a>`;
+document.getElementById('acc').innerHTML=`<a class="boton coral" href="${d.next[0]}"><i data-lucide="${d.next[2]}"></i> ${d.next[1]}</a><a class="boton claro" href="index.html"><i data-lucide="house"></i> Portada</a>`;
+window.lucide&&lucide.createIcons();
 </script>
 </body>
 </html>

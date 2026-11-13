@@ -5,83 +5,84 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Módulo · Español Online B1: Click &amp; Learn</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/estilo.css">
 <style>
   main{position:relative;z-index:1;padding-bottom:20px}
   .cabecera{border-radius:0 0 34px 34px;color:#fff;padding:40px 0 34px;margin-bottom:26px;position:relative;overflow:hidden}
   .cabecera h1{font-size:clamp(2rem,5vw,3rem)}
-  .cabecera .num{font-family:"Baloo 2";font-weight:800;opacity:.9}
+  .cabecera .num{font-family:"Poppins";font-weight:600;font-size:.85rem;letter-spacing:.06em;opacity:.9}
   .cabecera p{max-width:640px;font-size:1.08rem;opacity:.95;margin:10px 0 0}
-  .cabecera .gran{position:absolute;right:4%;top:50%;transform:translateY(-50%);font-size:8rem;opacity:.25}
+  .cabecera .gran{position:absolute;right:5%;top:50%;transform:translateY(-50%);opacity:.22}.cabecera .gran svg.lucide{width:150px;height:150px;stroke-width:1.4}
   .rejilla{display:grid;grid-template-columns:1fr 1fr;gap:18px}
   h2.t{font-size:1.5rem;margin-bottom:12px;color:var(--noche)}
-  .objetivos li{margin:6px 0;font-weight:600}
+  .objetivos li{margin:6px 0;font-weight:500}
   .tarea{border-left:8px solid var(--c);background:var(--crema);border-radius:16px;padding:16px 18px;margin-top:12px}
   .actividades{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
   .act{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:20px;background:#fff;border:3px solid var(--linea);text-decoration:none;color:var(--tinta);transition:transform .15s,border-color .15s}
   .act:hover{transform:translateY(-4px);border-color:var(--c)}
-  .act .ic{font-size:2rem}.act b{font-family:"Baloo 2";font-size:1.12rem}.act small{color:var(--suave);font-weight:700}
-  .act .est{margin-top:auto;font-weight:800;font-size:.8rem;color:var(--c)}
+  .act .ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:color-mix(in srgb,var(--c) 12%,#fff);color:var(--c)}.act .ic svg.lucide{width:24px;height:24px}.act b{font-family:"Poppins";font-weight:600;font-size:1.05rem}.act small{color:var(--suave);font-weight:400}
+  .act .est{margin-top:auto;display:flex;align-items:center;gap:4px;font-weight:600;font-size:.8rem;color:var(--c)}
   .act.prox{opacity:.6}.act.prox .est{color:var(--suave)}
   .texto-modelo p{margin:0 0 12px}
-  .persona{font-family:"Baloo 2";font-weight:800;color:var(--c);margin-top:10px}
+  .persona{font-family:"Poppins";font-weight:600;color:var(--c);margin-top:10px}
   .resaltar{border-radius:6px;padding:0 3px;transition:background .3s,color .3s}
   .modo-color .imp{background:#dcf5e9;color:#127a52}.modo-color .ind{background:#dfe8ff;color:#1f4fc2}.modo-color .plus{background:#ffe8d1;color:#b35f0f}
   .modo-color .conc{background:#ffe0dc;color:#c23a2b}.modo-color .clave{background:#fff3c4;color:#8a6500}
   .leyenda[hidden]{display:none}
   .leyenda{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
-  .leyenda span{padding:4px 10px;border-radius:999px;font-weight:800;font-size:.82rem}
+  .leyenda span{padding:4px 10px;border-radius:999px;font-weight:600;font-size:.82rem}
   /* juegos */
   .juego .instr{color:var(--suave);font-weight:700;margin:0 0 14px}
   .fichas{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px;min-height:52px}
-  .ficha{padding:10px 14px;border-radius:14px;background:#fff;border:3px solid var(--linea);font-weight:800;cursor:grab;user-select:none;touch-action:none;transition:transform .15s}
+  .ficha{padding:10px 14px;border-radius:14px;background:#fff;border:3px solid var(--linea);font-weight:600;cursor:grab;user-select:none;touch-action:none;transition:transform .15s}
   .ficha.sel{border-color:var(--c);transform:scale(1.05)}
   .ficha.ok{background:#e4f8ee;border-color:#1fa971;cursor:default}
   .ficha.mal{animation:temblor .35s}
   @keyframes temblor{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
   .cajas{display:grid;grid-template-columns:repeat(var(--n,2),1fr);gap:12px}
   .caja{min-height:120px;border-radius:18px;border:3px dashed var(--linea);padding:12px;display:flex;flex-direction:column;gap:8px;transition:background .2s,border-color .2s}
-  .caja h4{margin:0;font-family:"Baloo 2";font-size:1.1rem}
+  .caja h4{margin:0;font-family:"Poppins";font-size:1.1rem}
   .caja.sobre{background:color-mix(in srgb,var(--c) 10%,#fff);border-color:var(--c)}
-  .marcador{font-weight:800;margin-top:12px}
+  .marcador{font-weight:600;margin-top:12px}
   .tarjetas-g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
   .giro{perspective:800px;height:130px;cursor:pointer}
   .giro .in{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
   .giro.v .in{transform:rotateY(180deg)}
-  .giro .cara{position:absolute;inset:0;border-radius:18px;display:grid;place-items:center;text-align:center;padding:12px;backface-visibility:hidden;font-weight:800;box-shadow:var(--sombra)}
-  .giro .fr{background:var(--c);color:#fff;font-family:"Baloo 2";font-size:1.25rem}
+  .giro .cara{position:absolute;inset:0;border-radius:18px;display:grid;place-items:center;text-align:center;padding:12px;backface-visibility:hidden;font-weight:600;box-shadow:var(--sombra)}
+  .giro .fr{background:var(--c);color:#fff;font-family:"Poppins";font-size:1.25rem}
   .giro .at{background:#fff;transform:rotateY(180deg);font-size:.92rem}
-  .volver{display:inline-block;margin:26px 0 0;font-weight:800;text-decoration:none;color:var(--suave)}
+  .volver{display:inline-flex;align-items:center;gap:6px;margin:26px 0 0;font-weight:600;text-decoration:none;color:var(--suave)}
   @media (max-width:780px){.rejilla,.actividades{grid-template-columns:1fr}.tarjetas-g{grid-template-columns:repeat(2,1fr)}.cajas{grid-template-columns:1fr}.cabecera .gran{display:none}}
 </style>
+<script src="https://unpkg.com/lucide@0.441.0/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 <div class="fondo-confeti" aria-hidden="true"></div>
 <header class="barra-sup"><div class="envoltura">
-  <a class="marca" href="index.html"><span class="logo">🌎</span><span>Click &amp; Learn<small>ESPAÑOL ONLINE B1</small></span></a>
+  <a class="marca" href="index.html"><span class="logo"><i data-lucide="message-circle"></i></span><span>Click &amp; Learn<small>ESPAÑOL ONLINE B1</small></span></a>
   <nav id="nav-mod" style="display:flex;gap:6px"></nav>
 </div></header>
 <div class="cabecera" id="cab"><div class="envoltura"><span class="num" id="cab-num"></span><h1 id="cab-tit"></h1><p id="cab-desc"></p></div><span class="gran" id="cab-emoji"></span></div>
 <main class="envoltura">
   <div class="rejilla">
-    <div class="tarjeta entrar"><h2 class="t">🎯 Al terminar podrás...</h2><ul class="objetivos" id="objetivos"></ul><div class="tarea" id="tarea"></div></div>
+    <div class="tarjeta entrar"><h2 class="t">Al terminar podrás...</h2><ul class="objetivos" id="objetivos"></ul><div class="tarea" id="tarea"></div></div>
     <div class="tarjeta entrar juego" id="juego" style="animation-delay:.08s"></div>
   </div>
   <div class="tarjeta entrar" style="margin-top:18px;animation-delay:.12s">
-    <h2 class="t">🧩 Actividades del módulo</h2>
+    <h2 class="t">Actividades del módulo</h2>
     <div class="actividades" id="actividades"></div>
   </div>
   <div class="tarjeta entrar texto-modelo" style="margin-top:18px;animation-delay:.16s">
     <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
-      <h2 class="t" id="tm-tit">📖 Texto modelo</h2>
-      <button class="boton claro" id="btn-color" style="padding:10px 16px;font-size:.92rem">🎨 Resaltar la gramática</button>
+      <h2 class="t" id="tm-tit">Texto modelo</h2>
+      <button class="boton claro" id="btn-color" style="padding:10px 16px;font-size:.92rem"><i data-lucide="highlighter"></i> Resaltar la gramática</button>
     </div>
     <div class="leyenda" id="leyenda" hidden></div>
     <div id="tm"></div>
     <small style="color:var(--suave)">Texto de elaboración propia; los personajes son ficticios.</small>
   </div>
-  <a class="volver" href="index.html">← Volver al inicio del curso</a>
+  <a class="volver" href="index.html"><i data-lucide="arrow-left"></i> Volver al inicio del curso</a>
 </main>
 <p class="pie">Español Online B1: Click &amp; Learn</p>
 <script>
@@ -94,51 +95,51 @@ const ENLACES = {
 };
 const W=(c,t)=>`<span class="resaltar ${c}">${t}</span>`;
 const MODS={
- 1:{num:"MÓDULO 1 · SEMANAS 1 Y 2",tit:"Antes y ahora: mi vida en dos tiempos",emoji:"⏪",color:"#2f6fed",grad:"linear-gradient(135deg,#2f6fed,#5b8cff)",
+ 1:{num:"MÓDULO 1 · SEMANAS 1 Y 2",tit:"Antes y ahora: mi vida en dos tiempos",emoji:"rewind",color:"#2f6fed",grad:"#2f62d8",
   desc:"Cuenta cómo era tu vida antes de un cambio importante y cómo es ahora.",
   obj:["Contar cómo era tu vida antes de un cambio importante y cómo es ahora.","Hablar de tus hábitos del pasado con el imperfecto y con soler + infinitivo.","Comparar con antes, ahora, ya no y todavía."],
-  tarea:"<b>🏆 Tarea final:</b> publicación en el foro «Mi vida antes y ahora» (150-200 palabras) con una imagen, y un comentario al texto de un compañero.",
-  acts:[["video","🎥","Vídeo animado","El imperfecto y soler (5 min, 3 pausas)"],["forms","🔍","Descubre la regla","Cuestionario interactivo"],["quizlet","🃏","Quizlet: Antes y ahora","30 palabras y expresiones"],["educaplay","🎮","Educaplay: Cuando era niño","Completa el texto"],["auto","🪞","Autoevaluación","¿Qué he aprendido?"]],
+  tarea:"<b>Tarea final:</b> publicación en el foro «Mi vida antes y ahora» (150-200 palabras) con una imagen, y un comentario al texto de un compañero.",
+  acts:[["video","circle-play","Vídeo animado","El imperfecto y soler (5 min, 3 pausas)"],["forms","search","Descubre la regla","Cuestionario interactivo"],["quizlet","layers","Quizlet: Antes y ahora","30 palabras y expresiones"],["educaplay","gamepad-2","Educaplay: Cuando era niño","Completa el texto"],["auto","list-checks","Autoevaluación","¿Qué he aprendido?"]],
   leyenda:[["imp","Imperfecto: costumbres del pasado"],["clave","ya no · todavía · antes · ahora"]],
   texto:`<p class="persona">Mark, 34 años, Canadá</p><p>${W("clave","Antes")} ${W("imp","vivía")} en Toronto y ${W("imp","trabajaba")} en una oficina del centro. Me ${W("imp","levantaba")} a las seis, ${W("imp","tomaba")} el metro y casi nunca ${W("imp","comía")} en casa. Los fines de semana ${W("imp","solía")} quedar con mis amigos para ver hockey en un bar cerca de mi apartamento. Hace dos años me mudé a Medellín. ${W("clave","Ahora")} trabajo desde casa, ${W("clave","ya no")} tengo que madrugar y por las tardes salgo a caminar por el barrio. ${W("clave","Todavía")} veo los partidos de hockey, pero ahora los veo solo, en el portátil, y a veces a las tres de la mañana. Echo de menos a mis amigos, pero no echo de menos el invierno.</p>
   <p class="persona">Hannah, 29 años, Inglaterra</p><p>Cuando ${W("imp","vivía")} en Londres, ${W("imp","trabajaba")} en un banco y ${W("imp","pasaba")} diez horas al día delante del computador. ${W("imp","Solía")} almorzar un sándwich en mi escritorio y casi nunca ${W("imp","hablaba")} con mis compañeros. ${W("imp","Llovía")} mucho y yo siempre ${W("imp","llevaba")} un paraguas en la mochila. ${W("clave","Ahora")} vivo en Cartagena y doy clases de inglés en línea. ${W("clave","Ya no")} uso el metro: voy a todas partes en bicicleta. ${W("clave","Todavía")} tomo té por las tardes, como ${W("imp","hacía")} en Inglaterra, pero ahora lo tomo frío, con hielo y limón.</p>
   <p class="persona">Emre, 27 años, Turquía</p><p>${W("clave","Antes")} ${W("imp","estudiaba")} ingeniería en Estambul y ${W("imp","vivía")} con mis padres. Mi madre ${W("imp","cocinaba")} todos los días y yo no ${W("imp","sabía")} ni freír un huevo. Los domingos ${W("imp","solíamos")} ir a casa de mis abuelos y ${W("imp","pasábamos")} toda la tarde comiendo y conversando. ${W("clave","Ahora")} vivo solo en Bogotá y cocino... bastante mal, la verdad. ${W("clave","Ya no")} veo a mi familia cada semana, pero hablamos por videollamada todos los domingos. ${W("clave","Todavía")} no sé preparar el plato favorito de mi abuela, pero ya sé hacer arepas.</p>`,
-  juego:{tipo:"cajas",tit:"🎲 ¿Antes o ahora?",instr:"Arrastra cada frase a su caja (o tócala y después toca la caja).",cajas:["⏪ Antes","▶️ Ahora"],
+  juego:{tipo:"cajas",tit:"¿Antes o ahora?",instr:"Arrastra cada frase a su caja (o tócala y después toca la caja).",cajas:["Antes","Ahora"],
    fichas:[["Me levantaba a las seis",0],["Voy a todas partes en bicicleta",1],["Solía almorzar en mi escritorio",0],["Hablamos por videollamada",1],["Mi madre cocinaba todos los días",0],["Ya no uso el metro",1]]}},
- 2:{num:"MÓDULO 2 · SEMANA 3",tit:"Causas, consecuencias y contrastes",emoji:"🔗",color:"#ff6b5b",grad:"linear-gradient(135deg,#ff6b5b,#ff9472)",
+ 2:{num:"MÓDULO 2 · SEMANA 3",tit:"Causas, consecuencias y contrastes",emoji:"link",color:"#ff6b5b",grad:"#e5604f",
   desc:"Explica por qué pasan las cosas y da tu opinión sobre las costumbres.",
   obj:["Explicar por qué ocurren las cosas y qué consecuencias tienen.","Contrastar ideas con aunque y sin embargo.","Escribir un texto breve de opinión sobre una costumbre de tu entorno comparada con una colombiana."],
-  tarea:"<b>🏆 Tarea final:</b> texto de opinión «Una costumbre de mi entorno que en Colombia sorprendería» (150-180 palabras) en Google Docs.",
-  acts:[["forms","🔍","Descubre los conectores","Cuestionario interactivo"],["educaplay","🎮","Educaplay: cada conector","Relaciona conector y función"],["auto","🪞","Autoevaluación","¿Qué he aprendido?"]],
+  tarea:"<b>Tarea final:</b> texto de opinión «Una costumbre de mi entorno que en Colombia sorprendería» (150-180 palabras) en Google Docs.",
+  acts:[["forms","search","Descubre los conectores","Cuestionario interactivo"],["educaplay","gamepad-2","Educaplay: cada conector","Relaciona conector y función"],["auto","list-checks","Autoevaluación","¿Qué he aprendido?"]],
   leyenda:[["conc","Conectores de causa, consecuencia y contraste"]],
   texto:`<p class="persona">Lena (Alemania)</p><p>Lo que más me sorprendió al llegar a Barranquilla fue la hora de la comida. ${W("conc","Como")} en mi familia almorzábamos rápido y cada uno a su hora, al principio no entendía por qué mis compañeros se iban una hora larga a casa. ${W("conc","Sin embargo")}, con el tiempo me di cuenta de que el almuerzo aquí es un momento para estar juntos, ${W("conc","así que")} ahora intento no programar reuniones a mediodía. ${W("conc","Aunque")} todavía me cuesta, creo que es una costumbre más sana que la mía.</p>
   <p class="persona">Tom (Australia)</p><p>A mí me sorprendió la manera de saludar. En mi ciudad la gente dice hi y sigue caminando, pero aquí todo el mundo te pregunta cómo estás, cómo está tu familia... Al principio pensaba que tenía que contar mi vida, ${W("conc","porque")} no sabía que era solo una fórmula. Ahora me encanta, ${W("conc","ya que")} siento que la gente se preocupa por los demás.</p>
   <p class="persona">James (Estados Unidos)</p><p>Lo mío fue la puntualidad. Yo llegaba siempre a la hora exacta y, ${W("conc","por eso")}, muchas veces era el primero en llegar a las fiestas. ${W("conc","Aunque")} ya me he acostumbrado, para las citas de trabajo sigo siendo puntual, ${W("conc","porque")} en ese contexto aquí también se valora. ${W("conc","Por lo tanto")}, mi conclusión es que depende mucho de la situación.</p>`,
-  juego:{tipo:"cajas",tit:"🎲 Clasifica los conectores",instr:"¿Causa, consecuencia o contraste? Arrastra cada conector a su caja.",cajas:["💡 Causa","➡️ Consecuencia","↔️ Contraste"],
+  juego:{tipo:"cajas",tit:"Clasifica los conectores",instr:"¿Causa, consecuencia o contraste? Arrastra cada conector a su caja.",cajas:["Causa","Consecuencia","Contraste"],
    fichas:[["como",0],["porque",0],["ya que",0],["así que",1],["por eso",1],["por lo tanto",1],["aunque",2],["sin embargo",2]]}},
- 3:{num:"MÓDULO 3 · SEMANAS 4 Y 5",tit:"Te cuento lo que me pasó",emoji:"🎬",color:"#7b5cff",grad:"linear-gradient(135deg,#7b5cff,#a48bff)",
+ 3:{num:"MÓDULO 3 · SEMANAS 4 Y 5",tit:"Te cuento lo que me pasó",emoji:"clapperboard",color:"#7b5cff",grad:"#6d52e0",
   desc:"Narra una experiencia que no olvidarás: el escenario, las acciones y lo que había pasado antes.",
   obj:["Contar una experiencia combinando el indefinido, el imperfecto y el pluscuamperfecto.","Organizar tu relato con marcadores como un día, de repente o al final.","Usar expresiones para hablar de emociones y reacciones."],
-  tarea:"<b>🏆 Tarea final:</b> relato «Un día que no olvidaré» (200-250 palabras) con revisión entre compañeros y narración oral en grupo.",
-  acts:[["video","🎥","Vídeo: escenario y acción","Animado (6 min, 3 pausas)"],["forms","🔍","Descubre la historia","Cuestionario interactivo"],["quizlet","🃏","Quizlet: Te cuento...","40 tarjetas: marcadores y emociones"],["educaplay","🎮","Educaplay: viaje a Cartagena","Completa el relato"],["kahoot","🏁","Kahoot: ¿Escenario o acción?","Repaso en la sesión"],["auto","🪞","Autoevaluación","¿Qué he aprendido?"]],
-  leyenda:[["imp","🟢 Escenario: imperfecto"],["ind","🔵 Acciones: indefinido"],["plus","🟠 Lo que había pasado antes: pluscuamperfecto"]],
+  tarea:"<b>Tarea final:</b> relato «Un día que no olvidaré» (200-250 palabras) con revisión entre compañeros y narración oral en grupo.",
+  acts:[["video","circle-play","Vídeo: escenario y acción","Animado (6 min, 3 pausas)"],["forms","search","Descubre la historia","Cuestionario interactivo"],["quizlet","layers","Quizlet: Te cuento...","40 tarjetas: marcadores y emociones"],["educaplay","gamepad-2","Educaplay: viaje a Cartagena","Completa el relato"],["kahoot","flag","Kahoot: ¿Escenario o acción?","Repaso en la sesión"],["auto","list-checks","Autoevaluación","¿Qué he aprendido?"]],
+  leyenda:[["imp","Escenario: imperfecto"],["ind","Acciones: indefinido"],["plus","Lo que había pasado antes: pluscuamperfecto"]],
   texto:`<p class="persona">Elif, 26 años, Turquía</p><p>${W("imp","Era")} mi primer viaje sola fuera de Turquía. ${W("imp","Tenía")} veinticuatro años y ${W("imp","estaba")} muy emocionada, porque ${W("plus","había ahorrado")} durante dos años para conocer Colombia. ${W("imp","Hacía")} mucho calor y el aeropuerto de Bogotá ${W("imp","estaba")} lleno de gente. Después de pasar el control, ${W("ind","entré")} un momento al baño y luego ${W("ind","caminé")} tranquilamente hacia la puerta de embarque.</p>
   <p>Cuando ${W("ind","llegué")} a la puerta, ${W("ind","abrí")} la mochila para buscar el pasaporte y, de repente, me ${W("ind","di cuenta")} de que no ${W("imp","estaba")} allí: lo ${W("plus","había dejado")} en el baño. Me ${W("ind","puse")} muy nerviosa y ${W("ind","empecé")} a correr por todo el pasillo. Mientras ${W("imp","corría")}, solo ${W("imp","pensaba")} en una cosa: Voy a perder el vuelo.</p>
   <p>Al llegar al baño, ${W("ind","vi")} a una señora que ${W("imp","hablaba")} con un policía. Por suerte, ella ${W("plus","había encontrado")} el pasaporte y se lo ${W("plus","había entregado")}. El policía me ${W("ind","hizo")} varias preguntas y al final me lo ${W("ind","devolvió")}. ${W("ind","Llegué")} al avión justo a tiempo, cuando ya ${W("imp","estaban")} cerrando la puerta.</p>
   <p>Ese día me ${W("ind","llevé")} el susto de mi vida, pero también ${W("ind","aprendí")} algo: ${W("ind","dejé")} de confiar en mi memoria. Ahora reviso la mochila tres veces antes de cada viaje.</p>`,
-  juego:{tipo:"cajas",tit:"🎲 ¿Escenario o acción?",instr:"Lee los verbos de la historia de Elif y clasifícalos.",cajas:["🟢 Escenario","🔵 Acción","🟠 Antes de..."],
+  juego:{tipo:"cajas",tit:"¿Escenario o acción?",instr:"Lee los verbos de la historia de Elif y clasifícalos.",cajas:["Escenario","Acción","Antes de..."],
    fichas:[["hacía calor",0],["estaba emocionada",0],["entré al baño",1],["abrí la mochila",1],["había ahorrado",2],["lo había dejado",2],["empecé a correr",1],["mientras corría",0]]}},
- 4:{num:"MÓDULO 4 · SEMANA 6",tit:"Proyecto cultural: tradiciones que se celebran",emoji:"🎭",color:"#0ea5a4",grad:"linear-gradient(135deg,#0ea5a4,#36c9b4)",
+ 4:{num:"MÓDULO 4 · SEMANA 6",tit:"Proyecto cultural: tradiciones que se celebran",emoji:"drama",color:"#0ea5a4",grad:"#0e9493",
   desc:"Presenta en vídeo una tradición de tu país y compárala con una tradición colombiana.",
   obj:["Presentar una tradición o una fiesta de tu país.","Contar cómo se celebraba antes, cómo se celebra ahora y una experiencia tuya en ella.","Compararla con una tradición colombiana usando todo lo aprendido."],
-  tarea:"<b>🏆 Tarea final:</b> presentación en vídeo de 3-4 minutos (o diapositivas con tu voz) y comentarios a dos compañeros.",
-  acts:[["quizlet","🃏","Quizlet: Fiestas y tradiciones","Vocabulario del Carnaval"],["educaplay","🎮","Educaplay: crucigrama","¿Conoces el Carnaval?"],["cierre","🏁","Cierre del curso","Autoevaluación final y opinión"]],
+  tarea:"<b>Tarea final:</b> presentación en vídeo de 3-4 minutos (o diapositivas con tu voz) y comentarios a dos compañeros.",
+  acts:[["quizlet","layers","Quizlet: Fiestas y tradiciones","Vocabulario del Carnaval"],["educaplay","gamepad-2","Educaplay: crucigrama","¿Conoces el Carnaval?"],["cierre","flag","Cierre del curso","Autoevaluación final y opinión"]],
   leyenda:[["imp","Imperfecto: cómo era antes"],["ind","Indefinido: lo que pasó aquel día"],["clave","Léxico del Carnaval"]],
   texto:`<p class="persona">Laura, 41 años, Barranquilla</p><p>Cuando ${W("imp","era")} niña, mi abuela me ${W("imp","llevaba")} cada año a ver la Batalla de Flores, el gran ${W("clave","desfile")} con el que empieza el Carnaval de Barranquilla. Nos ${W("imp","sentábamos")} en la acera desde muy temprano porque, como no había ${W("clave","palcos")} para todos, había que coger sitio. Mi abuela ${W("imp","llevaba")} una nevera con agua y comida, y siempre ${W("imp","conocíamos")} a alguien nuevo.</p>
   <p>Recuerdo especialmente un año. Yo tenía ocho años y mi madre me había hecho un ${W("clave","disfraz")} de ${W("clave","marimonda")}, con la máscara de nariz larga y orejas grandes. Aunque hacía un calor tremendo, no ${W("ind","dejé")} de bailar en toda la tarde. Al final, un hombre de una ${W("clave","comparsa")} me ${W("ind","subió")} a su ${W("clave","carroza")} y ${W("ind","bailé")} ${W("clave","cumbia")} delante de miles de personas. Ese día ${W("ind","empecé")} a entender por qué dicen: Quien lo vive es quien lo goza.</p>
   <p>Hoy el Carnaval sigue siendo la fiesta más importante de la ciudad. Desde 2003 la UNESCO lo reconoce como ${W("clave","patrimonio")} de la humanidad. Yo ya no me disfrazo de marimonda, pero todavía llevo a mis hijos a la Batalla de Flores, como hacía mi abuela conmigo.</p>`,
-  juego:{tipo:"giro",tit:"🎴 Vocabulario del Carnaval",instr:"Toca cada tarjeta para descubrir su significado.",
-   fichas:[["🎉 desfile","Grupo de personas que pasa por la calle en orden durante una fiesta"],["🚚 carroza","Vehículo decorado que participa en un desfile"],["💃 comparsa","Grupo de personas disfrazadas que bailan juntas"],["🎭 disfraz","Ropa para parecer otra persona o un personaje"],["🥁 cumbia","Música y baile tradicional del Caribe colombiano"],["🏟️ palco","Lugar elevado con asientos para ver un desfile"],["🐒 marimonda","Disfraz con máscara de nariz larga del Carnaval de Barranquilla"],["🏛️ patrimonio","Tradiciones de un pueblo que se deben conservar"]]}}
+  juego:{tipo:"giro",tit:"Vocabulario del Carnaval",instr:"Toca cada tarjeta para descubrir su significado.",
+   fichas:[["desfile","Grupo de personas que pasa por la calle en orden durante una fiesta"],["carroza","Vehículo decorado que participa en un desfile"],["comparsa","Grupo de personas disfrazadas que bailan juntas"],["disfraz","Ropa para parecer otra persona o un personaje"],["cumbia","Música y baile tradicional del Caribe colombiano"],["palco","Lugar elevado con asientos para ver un desfile"],["marimonda","Disfraz con máscara de nariz larga del Carnaval de Barranquilla"],["patrimonio","Tradiciones de un pueblo que se deben conservar"]]}}
 };
 const $i=id=>document.getElementById(id); const cab_num=$i("cab-num"),cab_tit=$i("cab-tit"),cab_desc=$i("cab-desc"),cab_emoji=$i("cab-emoji"),objetivos=$i("objetivos"),tarea=$i("tarea"),actividades=$i("actividades"),tm=$i("tm"),leyenda=$i("leyenda"),btn_color=$i("btn-color");
 const n = Math.min(4,Math.max(1, parseInt(new URLSearchParams(location.search).get("m"))||1));
@@ -146,13 +147,14 @@ const M = MODS[n], L = ENLACES["m"+n];
 document.title = M.tit+" · Click & Learn";
 document.documentElement.style.setProperty("--c",M.color);
 const cab=document.getElementById("cab"); cab.style.background=M.grad;
-cab_num.textContent=M.num; cab_tit.textContent=M.tit; cab_desc.textContent=M.desc; cab_emoji.textContent=M.emoji;
+cab_num.textContent=M.num; cab_tit.textContent=M.tit; cab_desc.textContent=M.desc; cab_emoji.innerHTML=`<i data-lucide="${M.emoji}"></i>`;
 document.getElementById("nav-mod").innerHTML=[1,2,3,4].map(i=>`<a class="chip" href="modulo.html?m=${i}" style="${i===n?`background:${M.color};color:#fff;border-color:${M.color}`:''}">M${i}</a>`).join("");
 objetivos.innerHTML=M.obj.map(o=>`<li>${o}</li>`).join(""); tarea.innerHTML=M.tarea;
-actividades.innerHTML=M.acts.map(([k,ic,t,s])=>{const u=L[k]; return u?`<a class="act" href="${u}" target="_blank" rel="noopener"><span class="ic">${ic}</span><b>${t}</b><small>${s}</small><span class="est">Abrir actividad →</span></a>`:`<div class="act prox"><span class="ic">${ic}</span><b>${t}</b><small>${s}</small><span class="est">Disponible pronto</span></div>`}).join("");
+actividades.innerHTML=M.acts.map(([k,ic,t,s])=>{const u=L[k]; return u?`<a class="act" href="${u}" target="_blank" rel="noopener"><span class="ic"><i data-lucide="${ic}"></i></span><b>${t}</b><small>${s}</small><span class="est">Abrir actividad <i data-lucide="arrow-up-right"></i></span></a>`:`<div class="act prox"><span class="ic"><i data-lucide="${ic}"></i></span><b>${t}</b><small>${s}</small><span class="est">Disponible pronto</span></div>`}).join("");
 tm.innerHTML=M.texto;
 leyenda.innerHTML=M.leyenda.map(([c,t])=>`<span class="resaltar ${c}" style="border:2px solid var(--linea)">${t}</span>`).join("");
-btn_color.onclick=()=>{const on=tm.classList.toggle("modo-color"); leyenda.classList.toggle("modo-color",on); leyenda.hidden=!on; btn_color.textContent=on?"🙈 Quitar colores":"🎨 Resaltar la gramática";};
+lucide.createIcons();
+btn_color.onclick=()=>{const on=tm.classList.toggle("modo-color"); leyenda.classList.toggle("modo-color",on); leyenda.hidden=!on; btn_color.innerHTML=on?'<i data-lucide="eye-off"></i> Quitar colores':'<i data-lucide="highlighter"></i> Resaltar la gramática'; lucide.createIcons();};
 // juegos
 const J=M.juego, jg=document.getElementById("juego");
 if(J.tipo==="giro"){
@@ -163,8 +165,8 @@ if(J.tipo==="giro"){
   let aciertos=0, sel=null;
   const fichas=[...J.fichas].sort(()=>Math.random()-.5);
   jg.innerHTML=`<h2 class="t">${J.tit}</h2><p class="instr">${J.instr}</p><div class="fichas" id="fichas">${fichas.map(([t,c],i)=>`<span class="ficha" draggable="true" data-c="${c}" id="f${i}">${t}</span>`).join("")}</div>
-   <div class="cajas" style="--n:${J.cajas.length}">${J.cajas.map((c,i)=>`<div class="caja" data-c="${i}"><h4>${c}</h4></div>`).join("")}</div><p class="marcador" id="marc">0/${fichas.length} ✔</p>`;
-  const colocar=(f,caja)=>{ if(f.dataset.c===caja.dataset.c){ f.classList.remove("sel"); f.classList.add("ok"); f.draggable=false; caja.appendChild(f); aciertos++; marc.textContent=`${aciertos}/${fichas.length} ✔`; if(aciertos===fichas.length) marc.textContent="🎉 ¡Perfecto! Lo has conseguido."; } else { f.classList.remove("mal"); void f.offsetWidth; f.classList.add("mal"); } sel=null; jg.querySelectorAll(".ficha").forEach(x=>x.classList.remove("sel")); };
+   <div class="cajas" style="--n:${J.cajas.length}">${J.cajas.map((c,i)=>`<div class="caja" data-c="${i}"><h4>${c}</h4></div>`).join("")}</div><p class="marcador" id="marc">0/${fichas.length} correctas</p>`;
+  const colocar=(f,caja)=>{ if(f.dataset.c===caja.dataset.c){ f.classList.remove("sel"); f.classList.add("ok"); f.draggable=false; caja.appendChild(f); aciertos++; marc.textContent=`${aciertos}/${fichas.length} correctas`; if(aciertos===fichas.length) marc.textContent="¡Perfecto! Lo has conseguido."; } else { f.classList.remove("mal"); void f.offsetWidth; f.classList.add("mal"); } sel=null; jg.querySelectorAll(".ficha").forEach(x=>x.classList.remove("sel")); };
   jg.querySelectorAll(".ficha").forEach(f=>{
     f.addEventListener("dragstart",e=>{e.dataTransfer.setData("text",f.id);});
     f.addEventListener("click",()=>{ if(f.classList.contains("ok")) return; jg.querySelectorAll(".ficha").forEach(x=>x.classList.remove("sel")); sel=f; f.classList.add("sel"); });

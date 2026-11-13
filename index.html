@@ -6,62 +6,63 @@
 <title>Español Online B1: Click &amp; Learn</title>
 <meta name="description" content="Curso en línea de español para adultos de nivel B1: palabras y estructuras para contar, comparar y opinar.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/estilo.css">
 <style>
   main{position:relative;z-index:1}
   .portada{padding:56px 0 30px;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
-  .portada h1{font-size:clamp(2.4rem,6vw,4rem);color:var(--noche)}
-  .portada h1 em{font-style:normal;background:linear-gradient(90deg,var(--mar),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .portada h1{font-size:clamp(2.2rem,5vw,3.25rem);color:var(--noche)}
+  .portada h1 em{font-style:normal;color:var(--mar-osc);background:linear-gradient(transparent 62%,rgba(255,201,60,.45) 62%);padding:0 .08em}
   .portada p{font-size:1.15rem;color:var(--suave);margin:16px 0 26px;max-width:540px}
   .portada .acciones{display:flex;flex-wrap:wrap;gap:12px}
   .collage{position:relative;height:340px}
-  .burbuja{position:absolute;border-radius:28px;box-shadow:var(--sombra);display:grid;place-items:center;text-align:center;font-family:"Baloo 2";font-weight:800;color:#fff;padding:14px;animation:rebote 4s ease-in-out infinite}
+  .burbuja{position:absolute;border-radius:28px;box-shadow:var(--sombra);display:grid;place-items:center;text-align:center;font-family:"Poppins";font-weight:600;color:#fff;padding:14px;animation:rebote 6s ease-in-out infinite}
   .b1{left:4%;top:6%;width:52%;height:44%;background:var(--azul);font-size:1.3rem}
   .b2{right:2%;top:0;width:40%;height:34%;background:var(--coral);animation-delay:.6s}
   .b3{left:22%;bottom:4%;width:44%;height:40%;background:var(--mar);animation-delay:1.2s}
   .b4{right:4%;bottom:14%;width:30%;height:30%;background:var(--sol);color:var(--noche);animation-delay:1.8s}
-  .burbuja span{display:block;font-size:2.2rem}
+  .burbuja span{display:block;margin-bottom:6px}.burbuja span svg.lucide{width:40px;height:40px;stroke-width:1.8}
   .franja{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:10px 0 40px}
   .dato{background:#fff;border-radius:18px;padding:18px;text-align:center;box-shadow:var(--sombra)}
-  .dato b{display:block;font-family:"Baloo 2";font-size:2rem;color:var(--noche)}.dato small{font-weight:800;color:var(--suave)}
+  .dato b{display:block;font-family:"Poppins";font-weight:700;font-size:1.9rem;color:var(--noche)}.dato small{font-weight:500;color:var(--suave)}
   h2.sec{font-size:2rem;margin:10px 0 18px;color:var(--noche)}
   .modulos{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
   .mod{display:block;text-decoration:none;border-radius:26px;padding:26px;color:#fff;position:relative;overflow:hidden;box-shadow:var(--sombra);transition:transform .2s}
   .mod:hover{transform:translateY(-6px) rotate(-.4deg)}
-  .mod .num{font-family:"Baloo 2";font-weight:800;opacity:.85}
-  .mod h3{font-size:1.6rem;margin:6px 0 8px}
+  .mod .num{font-family:"Poppins";font-weight:600;font-size:.82rem;letter-spacing:.06em;opacity:.85}
+  .mod h3{font-size:1.5rem;margin:6px 60px 8px 0}
   .mod p{margin:0 0 14px;opacity:.95}
   .mod .tags{display:flex;flex-wrap:wrap;gap:6px}
-  .mod .tags span{background:rgba(255,255,255,.22);padding:4px 10px;border-radius:999px;font-weight:800;font-size:.8rem}
-  .mod .emoji{position:absolute;right:16px;bottom:8px;font-size:4.5rem;opacity:.28}
+  .mod .tags span{background:rgba(255,255,255,.22);padding:4px 10px;border-radius:999px;font-weight:500;font-size:.8rem}
+  .mod .emoji{position:absolute;right:20px;top:18px;opacity:.3}.mod .emoji svg.lucide{width:44px;height:44px;stroke-width:1.6}
   .camino{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:8px 0 40px}
   .paso{background:#fff;border-radius:18px;padding:16px;text-align:center;box-shadow:var(--sombra)}
-  .paso span{font-size:1.8rem;display:block}.paso b{display:block;margin-top:6px}.paso small{color:var(--suave);font-weight:700}
+  .paso span{display:grid;place-items:center;width:48px;height:48px;margin:0 auto;border-radius:14px;background:var(--crema);color:var(--noche)}.paso span svg.lucide{width:24px;height:24px}.paso b{display:block;margin-top:6px}.paso small{color:var(--suave);font-weight:400}
   .herr{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
   .herr .chip{font-size:.95rem;padding:10px 16px}
   @media (max-width:780px){.portada{grid-template-columns:1fr;padding-top:30px}.collage{height:260px}.franja{grid-template-columns:repeat(2,1fr)}.modulos{grid-template-columns:1fr}.camino{grid-template-columns:1fr 1fr}}
 </style>
+<script src="https://unpkg.com/lucide@0.441.0/dist/umd/lucide.min.js"></script>
 </head>
 <body>
 <div class="fondo-confeti" aria-hidden="true"></div>
 <header class="barra-sup"><div class="envoltura">
-  <a class="marca" href="index.html"><span class="logo">🌎</span><span>Click &amp; Learn<small>ESPAÑOL ONLINE B1</small></span></a>
-  <a class="boton coral" href="diagnostico/" style="padding:10px 18px;font-size:.95rem">🧭 Prueba diagnóstica</a>
+  <a class="marca" href="index.html"><span class="logo"><i data-lucide="message-circle"></i></span><span>Click &amp; Learn<small>ESPAÑOL ONLINE B1</small></span></a>
+  <a class="boton coral" href="diagnostico/" style="padding:10px 18px;font-size:.95rem"><i data-lucide="compass"></i> Prueba diagnóstica</a>
 </div></header>
 <main class="envoltura">
   <section class="portada">
     <div class="entrar">
-      <span class="chip">🇨🇴 Español para adultos · Nivel B1 del MCER</span>
+      <span class="chip"><i data-lucide="map-pin"></i> Español para adultos · Nivel B1 del MCER</span>
       <h1 style="margin-top:14px">Palabras y estructuras para <em>contar, comparar y opinar</em></h1>
       <p>Seis semanas, cuatro módulos y un objetivo: que uses con precisión y naturalidad el español que ya conoces. Aprenderás haciendo tareas reales, con tus compañeros y con herramientas digitales que tienen un propósito claro.</p>
-      <div class="acciones"><a class="boton coral" href="diagnostico/">Empieza aquí: prueba diagnóstica →</a><a class="boton claro" href="#modulos">Ver los módulos</a></div>
+      <div class="acciones"><a class="boton coral" href="diagnostico/">Empieza aquí: prueba diagnóstica <i data-lucide="arrow-right"></i></a><a class="boton claro" href="#modulos">Ver los módulos</a></div>
     </div>
     <div class="collage" aria-hidden="true">
-      <div class="burbuja b1"><div><span>⏪</span>Antes vivía en...</div></div>
-      <div class="burbuja b2"><div><span>🔗</span>aunque...</div></div>
-      <div class="burbuja b3"><div><span>🎬</span>De repente...</div></div>
-      <div class="burbuja b4"><div><span>🎭</span>¡Carnaval!</div></div>
+      <div class="burbuja b1"><div><span><i data-lucide="rewind"></i></span>Antes vivía en...</div></div>
+      <div class="burbuja b2"><div><span><i data-lucide="link"></i></span>aunque...</div></div>
+      <div class="burbuja b3"><div><span><i data-lucide="clapperboard"></i></span>De repente...</div></div>
+      <div class="burbuja b4"><div><span><i data-lucide="drama"></i></span>¡Carnaval!</div></div>
     </div>
   </section>
 
@@ -72,29 +73,30 @@
     <div class="dato"><b>3 h 30</b><small>de dedicación esencial semanal</small></div>
   </div>
 
-  <h2 class="sec" id="modulos">🗺️ Los módulos</h2>
+  <h2 class="sec" id="modulos">Los módulos</h2>
   <div class="modulos">
-    <a class="mod" href="modulo.html?m=1" style="background:linear-gradient(135deg,#2f6fed,#5b8cff)"><span class="num">MÓDULO 1 · SEMANAS 1 Y 2</span><h3>Antes y ahora: mi vida en dos tiempos</h3><p>Cuenta cómo era tu vida antes de un gran cambio y cómo es ahora.</p><div class="tags"><span>imperfecto</span><span>soler + infinitivo</span><span>ya no / todavía</span></div><span class="emoji">⏪</span></a>
-    <a class="mod" href="modulo.html?m=2" style="background:linear-gradient(135deg,#ff6b5b,#ff9472)"><span class="num">MÓDULO 2 · SEMANA 3</span><h3>Causas, consecuencias y contrastes</h3><p>Explica por qué pasan las cosas y da tu opinión sobre las costumbres.</p><div class="tags"><span>porque / como</span><span>así que / por eso</span><span>aunque / sin embargo</span></div><span class="emoji">🔗</span></a>
-    <a class="mod" href="modulo.html?m=3" style="background:linear-gradient(135deg,#7b5cff,#a48bff)"><span class="num">MÓDULO 3 · SEMANAS 4 Y 5</span><h3>Te cuento lo que me pasó</h3><p>Narra una experiencia que no olvidarás: escenario, acciones y sorpresas.</p><div class="tags"><span>indefinido / imperfecto</span><span>pluscuamperfecto</span><span>de repente</span></div><span class="emoji">🎬</span></a>
-    <a class="mod" href="modulo.html?m=4" style="background:linear-gradient(135deg,#0ea5a4,#36c9b4)"><span class="num">MÓDULO 4 · SEMANA 6</span><h3>Proyecto cultural: tradiciones que se celebran</h3><p>Presenta en vídeo una tradición de tu país y compárala con el Carnaval.</p><div class="tags"><span>todo el curso</span><span>léxico de fiestas</span><span>presentación oral</span></div><span class="emoji">🎭</span></a>
+    <a class="mod" href="modulo.html?m=1" style="background:#2f62d8"><span class="num">MÓDULO 1 · SEMANAS 1 Y 2</span><h3>Antes y ahora: mi vida en dos tiempos</h3><p>Cuenta cómo era tu vida antes de un gran cambio y cómo es ahora.</p><div class="tags"><span>imperfecto</span><span>soler + infinitivo</span><span>ya no / todavía</span></div><span class="emoji"><i data-lucide="rewind"></i></span></a>
+    <a class="mod" href="modulo.html?m=2" style="background:#e5604f"><span class="num">MÓDULO 2 · SEMANA 3</span><h3>Causas, consecuencias y contrastes</h3><p>Explica por qué pasan las cosas y da tu opinión sobre las costumbres.</p><div class="tags"><span>porque / como</span><span>así que / por eso</span><span>aunque / sin embargo</span></div><span class="emoji"><i data-lucide="link"></i></span></a>
+    <a class="mod" href="modulo.html?m=3" style="background:#6d52e0"><span class="num">MÓDULO 3 · SEMANAS 4 Y 5</span><h3>Te cuento lo que me pasó</h3><p>Narra una experiencia que no olvidarás: escenario, acciones y sorpresas.</p><div class="tags"><span>indefinido / imperfecto</span><span>pluscuamperfecto</span><span>de repente</span></div><span class="emoji"><i data-lucide="clapperboard"></i></span></a>
+    <a class="mod" href="modulo.html?m=4" style="background:#0e9493"><span class="num">MÓDULO 4 · SEMANA 6</span><h3>Proyecto cultural: tradiciones que se celebran</h3><p>Presenta en vídeo una tradición de tu país y compárala con el Carnaval.</p><div class="tags"><span>todo el curso</span><span>léxico de fiestas</span><span>presentación oral</span></div><span class="emoji"><i data-lucide="drama"></i></span></a>
   </div>
 
-  <h2 class="sec" style="margin-top:40px">🔄 Cada módulo, el mismo camino</h2>
+  <h2 class="sec" style="margin-top:40px">Cada módulo, el mismo camino</h2>
   <div class="camino">
-    <div class="paso"><span>🎯</span><b>Pretarea</b><small>Objetivos y texto modelo</small></div>
-    <div class="paso"><span>🔍</span><b>Descubre</b><small>Vídeo y cuestionario</small></div>
-    <div class="paso"><span>🧠</span><b>Practica</b><small>Quizlet y Educaplay</small></div>
-    <div class="paso"><span>🗣️</span><b>Usa</b><small>Sesiones en directo</small></div>
-    <div class="paso"><span>🏆</span><b>Crea</b><small>Tarea final y autoevaluación</small></div>
+    <div class="paso"><span><i data-lucide="target"></i></span><b>Pretarea</b><small>Objetivos y texto modelo</small></div>
+    <div class="paso"><span><i data-lucide="search"></i></span><b>Descubre</b><small>Vídeo y cuestionario</small></div>
+    <div class="paso"><span><i data-lucide="brain"></i></span><b>Practica</b><small>Quizlet y Educaplay</small></div>
+    <div class="paso"><span><i data-lucide="messages-square"></i></span><b>Usa</b><small>Sesiones en directo</small></div>
+    <div class="paso"><span><i data-lucide="trophy"></i></span><b>Crea</b><small>Tarea final y autoevaluación</small></div>
   </div>
 
-  <h2 class="sec">🧰 Tus herramientas</h2>
+  <h2 class="sec">Tus herramientas</h2>
   <div class="herr">
-    <span class="chip">🏫 Google Classroom · el aula</span><span class="chip">🎥 Google Meet · sesiones en directo</span><span class="chip">🃏 Quizlet · vocabulario</span>
-    <span class="chip">🎮 Educaplay · gramática a tu ritmo</span><span class="chip">🏁 Kahoot · repaso en grupo</span><span class="chip">📝 Google Docs · escritura</span><span class="chip">✅ Google Forms · cuestionarios</span>
+    <span class="chip"><i data-lucide="school"></i> Google Classroom · el aula</span><span class="chip"><i data-lucide="video"></i> Google Meet · sesiones en directo</span><span class="chip"><i data-lucide="layers"></i> Quizlet · vocabulario</span>
+    <span class="chip"><i data-lucide="gamepad-2"></i> Educaplay · gramática a tu ritmo</span><span class="chip"><i data-lucide="flag"></i> Kahoot · repaso en grupo</span><span class="chip"><i data-lucide="file-text"></i> Google Docs · escritura</span><span class="chip"><i data-lucide="clipboard-check"></i> Google Forms · cuestionarios</span>
   </div>
 </main>
 <p class="pie">Español Online B1: Click &amp; Learn · Material de elaboración propia · Personajes ficticios</p>
+<script>window.lucide&&lucide.createIcons();</script>
 </body>
 </html>
