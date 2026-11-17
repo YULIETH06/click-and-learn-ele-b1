@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+<title>Third Conditional &amp; Tag Questions – Teacher Jean Ramos - English 02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,800;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: single exercise-sheet column; sticky progress strip; questions grouped by skill */
+:root{
+  --paper:#f7f9fc;
+  --sheet:#ffffff;
+  --ink:#16233b;
+  --muted:#5b6880;
+  --rule:#dbe2ee;
+  --blue:#1f4fd1;
+  --blue-soft:#e7eeff;
+  --mark:#ffe14d;
+  --ok:#137a43; --ok-soft:#e2f5ea;
+  --bad:#c0322b; --bad-soft:#fde8e6;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f1522; --sheet:#161e2e; --ink:#e6ebf5; --muted:#9aa6bd; --rule:#2a3448;
+  --blue:#8aa8ff; --blue-soft:#1d2a4a; --mark:#d9b92a;
+  --ok:#5fd394; --ok-soft:#173326; --bad:#ff8a80; --bad-soft:#3a1d1c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f1522; --sheet:#161e2e; --ink:#e6ebf5; --muted:#9aa6bd; --rule:#2a3448;
+  --blue:#8aa8ff; --blue-soft:#1d2a4a; --mark:#d9b92a;
+  --ok:#5fd394; --ok-soft:#173326; --bad:#ff8a80; --bad-soft:#3a1d1c; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+.wrap{max-width:780px;margin:0 auto;padding-block:28px 64px;
+  padding-left:max(16px, env(safe-area-inset-left,0px));padding-right:max(16px, env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+header{display:grid;gap:14px;margin-bottom:22px}
+h1{font-size:clamp(2rem,6vw,3.1rem);font-weight:800;letter-spacing:-.02em}
+h1 .hl{background:linear-gradient(transparent 58%, var(--mark) 58%, var(--mark) 90%, transparent 90%);padding:0 .1em}
+.intro{color:var(--muted);max-width:62ch;margin:0}
+.teacher{margin:-4px 0 0;font-family:var(--display);font-weight:700;font-size:clamp(1.15rem,3.5vw,1.45rem);color:var(--blue)}
+
+.student{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:end;background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:14px 16px}
+.student label{display:grid;gap:4px;font-size:14px;color:var(--muted);flex:1 1 220px;min-width:0}
+.student input{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:2px solid var(--rule);padding:4px 2px;width:100%}
+.student input:focus{outline:none;border-color:var(--blue)}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);padding-block:10px;margin-bottom:6px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--rule)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.track{flex:1;height:8px;background:var(--rule);border-radius:99px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--blue);transition:width .2s}
+.count{font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+
+section.part{margin-top:34px}
+.part-head{display:grid;gap:4px;margin-bottom:12px}
+.part-head h2{font-size:1.5rem;font-weight:700}
+.part-head p{margin:0;color:var(--muted);font-size:15px}
+
+.passage{background:var(--sheet);border:1px solid var(--rule);border-left:4px solid var(--blue);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+.passage h3{font-size:1.15rem;margin-bottom:8px}
+.passage p{margin:0 0 10px;max-width:65ch}
+.passage p:last-child{margin-bottom:0}
+
+.q{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:14px 16px;margin-bottom:10px}
+.q.correct{border-color:var(--ok);background:var(--ok-soft)}
+.q.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.q.missing{border-style:dashed;border-color:var(--bad)}
+.stem{display:flex;gap:10px;margin:0 0 10px}
+.num{font-family:var(--mono);font-size:13px;color:var(--muted);min-width:2.2em;padding-top:3px;font-variant-numeric:tabular-nums}
+.stem p{margin:0;min-width:0}
+.blank{display:inline-block;min-width:4.5em;border-bottom:2px solid var(--ink);margin:0 2px}
+.indent{padding-left:calc(2.2em + 10px)}
+@media (max-width:480px){.indent{padding-left:0}}
+.opts{display:grid;gap:6px}
+.opt{display:flex;gap:10px;align-items:flex-start;padding:7px 10px;border-radius:8px;border:1px solid transparent;cursor:pointer}
+.opt:hover{background:var(--blue-soft)}
+.opt input{margin-top:5px;accent-color:var(--blue)}
+.opt:has(input:focus-visible){outline:2px solid var(--blue);outline-offset:1px}
+.opt.is-right{border-color:var(--ok);background:var(--sheet)}
+.opt.is-picked-wrong{text-decoration:line-through;color:var(--bad)}
+
+.audio{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.audio button{padding:7px 14px;font-size:15px;border-width:1.5px}
+.audio .plays{font-family:var(--mono);font-size:12px;color:var(--muted);align-self:center}
+
+.write{display:grid;gap:6px}
+.write label{font-size:14px;color:var(--muted)}
+.write input{font:inherit;color:var(--ink);background:var(--paper);border:1.5px solid var(--rule);border-radius:8px;padding:9px 12px;width:100%;max-width:420px}
+.write input:focus{outline:none;border-color:var(--blue)}
+.write input:disabled{opacity:1;color:var(--ink)}
+
+.why{display:none;margin:10px 0 0;font-size:15px;color:var(--ink)}
+.graded .why{display:block}
+.why b{font-family:var(--display)}
+.why i{color:var(--muted)}
+
+.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:28px}
+button{font:inherit;font-weight:700;cursor:pointer;border-radius:8px;padding:11px 18px;border:2px solid var(--blue)}
+button:disabled{opacity:.5;cursor:default}
+.primary{background:var(--blue);color:var(--sheet)}
+.ghost{background:transparent;color:var(--blue)}
+button:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.notice{color:var(--bad);font-size:15px;margin:0;flex-basis:100%}
+
+.result{margin-top:28px;background:var(--sheet);border:2px solid var(--ink);border-radius:12px;padding:18px 20px;display:grid;gap:14px}
+.score{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.score .big{font-family:var(--display);font-weight:800;font-size:3.2rem;line-height:1;font-variant-numeric:tabular-nums}
+.score .pct{font-family:var(--mono);color:var(--muted)}
+.breakdown{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.breakdown div{border:1px solid var(--rule);border-radius:8px;padding:8px 10px;font-size:14px;min-width:0}
+.breakdown strong{display:block;font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums}
+.meta{font-size:14px;color:var(--muted)}
+
+.gate{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.rules{margin:0;padding-left:1.2em;color:var(--muted);font-size:15px;max-width:62ch}
+.rules li{margin-bottom:2px}
+.timer{font-family:var(--mono);font-weight:500;font-size:15px;font-variant-numeric:tabular-nums;background:var(--blue-soft);color:var(--blue);padding:3px 10px;border-radius:6px;white-space:nowrap}
+.timer.low{background:var(--bad-soft);color:var(--bad)}
+.leaves{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.leaves.flag{color:var(--bad)}
+.nocopy{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.nocopy input[type=text]{-webkit-user-select:text;user-select:text}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--bad);color:var(--sheet);padding:10px 16px;border-radius:8px;font-size:15px;z-index:20;max-width:calc(100% - 32px)}
+pre.copytext{margin:0;white-space:pre-wrap;font-family:var(--mono);font-size:13px;background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:12px;overflow-x:auto}
+@media (max-width:520px){.bar{flex-wrap:wrap}.track{flex-basis:100%;order:3}}
+.send{margin:0;padding-left:1.3em;font-size:15px}
+.evidence{display:grid;gap:8px;justify-items:start;background:var(--sheet);border:2px dashed var(--blue);border-radius:10px;padding:14px 16px}
+.formbtn{display:inline-block;font-weight:700;text-decoration:none;border-radius:8px;padding:11px 18px;border:2px solid var(--blue);color:var(--blue);background:transparent}
+.formbtn:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.formurl{font-family:var(--mono);font-size:13px;-webkit-user-select:all;user-select:all;word-break:break-all}
+footer{margin-top:40px;font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
+
+/* ---- Lively theme: classroom poster colors, rounded type, per-part color ---- */
+:root{
+  --paper:#eef7f4; --sheet:#ffffff; --ink:#1d2b36; --muted:#5a6b75; --rule:#d5e6e1;
+  --blue:#0f7f86; --blue-soft:#dcf2f0; --mark:#ffc93c;
+  --coral:#ff6b57; --sun:#ffb81f; --grape:#8a5cf6; --leaf:#2fa36b;
+  --pc:#0f7f86; --pc-soft:#dcf2f0;
+  --display:"Fredoka","Trebuchet MS",system-ui,sans-serif;
+  --body:"Nunito","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f1a1d; --sheet:#17262a; --ink:#e8f1f0; --muted:#9fb4b6; --rule:#28403f;
+  --blue:#4fd1c8; --blue-soft:#163a3a; --mark:#e0b030;
+  --coral:#ff8a78; --sun:#ffc94d; --grape:#a98bff; --leaf:#5fd39a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f1a1d; --sheet:#17262a; --ink:#e8f1f0; --muted:#9fb4b6; --rule:#28403f;
+  --blue:#4fd1c8; --blue-soft:#163a3a; --mark:#e0b030;
+  --coral:#ff8a78; --sun:#ffc94d; --grape:#a98bff; --leaf:#5fd39a; color-scheme:dark}
+
+body{
+  font-family:var(--body);
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(circle at 8% 12%, color-mix(in srgb,var(--sun) 28%,transparent) 0 120px, transparent 121px),
+    radial-gradient(circle at 92% 28%, color-mix(in srgb,var(--coral) 20%,transparent) 0 160px, transparent 161px),
+    radial-gradient(circle at 15% 78%, color-mix(in srgb,var(--grape) 16%,transparent) 0 140px, transparent 141px),
+    radial-gradient(circle at 88% 88%, color-mix(in srgb,var(--leaf) 18%,transparent) 0 130px, transparent 131px),
+    radial-gradient(color-mix(in srgb,var(--blue) 18%,transparent) 1.2px, transparent 1.3px);
+  background-size:100% 100%,100% 100%,100% 100%,100% 100%,22px 22px;
+  background-attachment:fixed;
+}
+h1{font-family:var(--display);font-weight:700;letter-spacing:-.01em;font-size:clamp(2.3rem,7vw,3.6rem)}
+h1 .hl{background:none;color:var(--coral);position:relative;display:inline-block;padding:0}
+h1 .hl::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:.22em;border-radius:99px;background:var(--sun);z-index:-1;transform:scaleX(0);transform-origin:left;animation:draw .9s .2s ease-out forwards}
+@keyframes draw{to{transform:scaleX(1)}}
+.teacher{font-family:var(--display);font-weight:600;color:var(--blue)}
+.eyebrow{font-family:var(--display);font-weight:600;letter-spacing:.06em}
+.student,.evidence{border-radius:18px;box-shadow:0 6px 0 var(--rule)}
+.student input{font-family:var(--display);font-size:1.1rem}
+
+.bar{background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:0;border-radius:0 0 16px 16px}
+.track{height:12px;background:var(--sheet);border:2px solid var(--rule)}
+.fill{background:repeating-linear-gradient(45deg,var(--coral) 0 12px,var(--sun) 12px 24px);background-size:34px 34px;animation:stripes 1.2s linear infinite}
+@keyframes stripes{to{background-position:34px 0}}
+.timer{font-family:var(--display);font-size:1.05rem;border-radius:99px;padding:4px 12px}
+
+section.part:nth-of-type(1){--pc:var(--coral)}
+section.part:nth-of-type(2){--pc:var(--blue)}
+section.part:nth-of-type(3){--pc:var(--sun)}
+section.part:nth-of-type(4){--pc:var(--grape)}
+section.part:nth-of-type(5){--pc:var(--leaf)}
+section.part{--pc-soft:color-mix(in srgb,var(--pc) 14%,var(--sheet))}
+.part-head{background:var(--pc);color:#fff;border-radius:18px;padding:14px 18px;box-shadow:0 6px 0 color-mix(in srgb,var(--pc) 60%,#000)}
+.part-head h2{font-family:var(--display);font-weight:700;font-size:1.6rem;color:#fff}
+.part-head p{color:#fff;opacity:.92}
+section.part:nth-of-type(3) .part-head,section.part:nth-of-type(3) .part-head h2,section.part:nth-of-type(3) .part-head p{color:#2a1d00}
+
+.q{border-radius:18px;border:2px solid var(--rule);transition:transform .15s ease, box-shadow .15s ease, border-color .15s}
+.q:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--rule)}
+.q:has(input:checked),.q:has(.write input:not(:placeholder-shown)){border-color:var(--pc)}
+.num{font-family:var(--display);font-weight:700;font-size:15px;color:#fff;background:var(--pc);border-radius:10px;min-width:2.2em;height:1.9em;display:grid;place-items:center;padding:0}
+section.part:nth-of-type(3) .num{color:#2a1d00}
+.stem p{font-weight:600}
+.blank{border-bottom:3px dashed var(--pc)}
+.opts{gap:8px}
+.opt{border:2px solid var(--rule);border-radius:14px;background:var(--sheet);transition:transform .12s ease,background .15s,border-color .15s}
+.opt:hover{transform:translateX(4px);background:var(--pc-soft);border-color:var(--pc)}
+.opt:has(input:checked){background:var(--pc-soft);border-color:var(--pc);font-weight:800;animation:pop .25s ease}
+.opt input{accent-color:var(--pc);width:18px;height:18px}
+@keyframes pop{0%{transform:scale(.97)}60%{transform:scale(1.02)}100%{transform:scale(1)}}
+.write input{border-radius:12px;border-width:2px;font-family:var(--display);font-size:1.05rem}
+.write input:focus{border-color:var(--pc);box-shadow:0 0 0 4px var(--pc-soft)}
+.passage{border-radius:18px;border-left:8px solid var(--sun)}
+.passage h3{font-family:var(--display);font-weight:700}
+.audio button{border-color:var(--grape);color:var(--grape);border-radius:99px}
+.audio button:hover{background:var(--grape);color:#fff}
+
+button,.formbtn{font-family:var(--display);font-weight:600;border-radius:14px;transition:transform .1s, box-shadow .1s}
+.primary{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 5px 0 color-mix(in srgb,var(--coral) 60%,#000)}
+.primary:hover{transform:translateY(-2px);box-shadow:0 7px 0 color-mix(in srgb,var(--coral) 60%,#000)}
+.primary:active{transform:translateY(3px);box-shadow:0 2px 0 color-mix(in srgb,var(--coral) 60%,#000)}
+.formbtn{border-color:var(--blue);color:var(--blue);background:var(--sheet);box-shadow:0 4px 0 var(--rule)}
+.formbtn:hover{background:var(--blue);color:var(--sheet)}
+
+.q.correct{background:color-mix(in srgb,var(--ok) 10%,var(--sheet))}
+.q.wrong{background:color-mix(in srgb,var(--bad) 8%,var(--sheet))}
+.result{border-radius:22px;border:3px solid var(--pc,var(--blue));box-shadow:0 10px 0 var(--rule);animation:pop .4s ease}
+.score .big{font-family:var(--display);font-weight:700;color:var(--coral);font-size:4rem}
+footer{font-family:var(--display)}
+@media (prefers-reduced-motion:reduce){*,*::after{animation:none!important;transition:none!important}h1 .hl::after{transform:none}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">B1+ · Third conditional &amp; tag questions · 30 questions</div>
+    <h1>If only I had known, <span class="hl">hadn't&nbsp;I?</span></h1>
+    <p class="teacher">Teacher Jean Ramos - English 02</p>
+    <p class="intro">30 questions in five parts: grammar, vocabulary, reading, listening and writing. Read every sentence carefully before you choose your answer.</p>
+    <ul class="rules">
+      <li>You have <b>30 minutes</b>. The timer starts when you press <b>Start test</b>, and the test is checked automatically when time runs out.</li>
+      <li>Stay on this page. Every time you leave it (another tab or app), it is recorded in your result. <b>If you leave it 3 times, the test closes automatically</b> and is graded with the answers you have.</li>
+      <li>You can do the test only once. At the end, press <b>Copy result</b> and send it in the <b>evidence form</b>.</li>
+    </ul>
+    <div class="evidence">
+      <div class="eyebrow">Evidence form · send your result here</div>
+      <a class="formbtn" href="https://forms.gle/yd3oEZx2YRTPTuLJ8" target="_blank" rel="noopener">Open the evidence form ↗</a>
+      <span class="formurl">https://forms.gle/yd3oEZx2YRTPTuLJ8</span>
+      <span class="meta"><b>Ábrelo solo cuando termines el examen.</b> Si lo abres durante el examen, cuenta como una salida de la página.</span>
+    </div>
+    <form class="student" id="studentForm" autocomplete="off">
+      <label for="sname">Student name<input id="sname" name="sname" type="text" placeholder="Write your full name"></label>
+      <label for="sgroup" style="flex:0 1 140px">Group<input id="sgroup" name="sgroup" type="text" placeholder="e.g. 10A"></label>
+    </form>
+    <div class="gate" id="gate">
+      <button type="button" class="primary" id="startBtn">Start test · 30 min</button>
+      <p class="notice" id="gateNotice" hidden></p>
+    </div>
+  </header>
+
+  <div class="bar" id="bar" role="status" aria-live="polite" hidden>
+    <span class="timer" id="timer">30:00</span>
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <div class="count" id="count">0 / 30 answered</div>
+    <span class="leaves" id="leaves">Left page: 0</span>
+  </div>
+
+  <form id="quiz" class="nocopy" autocomplete="off" hidden></form>
+
+  <div class="actions" id="actions" hidden>
+    <button type="button" class="primary" id="check">Check my answers</button>
+    <p class="notice" id="notice" hidden></p>
+  </div>
+
+  <div class="result" id="result" hidden></div>
+
+  <footer>Teacher Jean Ramos - English 02</footer>
+  <div class="toast" id="toast" role="alert" hidden></div>
+</div>
+
+<script>
+// Multiple choice: [stem, correct, wrong..., explanation]. Correct is listed first; options are shuffled with a fixed seed.
+const GRAMMAR = [
+  ["If the scientists hadn't made so much progress, they ___ a cure for the disease.","wouldn't have found","wouldn't find","didn't find","Unreal past result: wouldn't have + past participle (third conditional)."],
+  ["If we ___ the guests earlier, more people would have come to the wedding.","had invited","invited","would have invited","Unreal past condition: if + had + past participle (third conditional)."],
+  ["She would have succeeded if she ___ more faith in herself.","had had","had","would have","Have (something) in → if she had had faith in herself: had + past participle of have."],
+  ["If our grandparents hadn't protected these traditions, the new generation ___ about them.","wouldn't have known","won't know","hadn't known","Unreal past result: wouldn't have + past participle (third conditional)."],
+  ["___ he had taken part in the festival, he would have met the mayor.","If","Although","Because","The condition is introduced by if (third conditional)."],
+  ["If you had told me it was just a superstition, I ___ so worried.","wouldn't have been","won't be","hadn't been","Unreal past result: wouldn't have been (third conditional)."],
+  ["You took part in the ceremony, ___?","didn't you","did you","weren't you","Positive past simple sentence → negative tag with did: didn't you?"],
+  ["This gift belongs to Maria, ___?","doesn't it","isn't it","does it","Present simple with he/she/it (belongs) → negative tag with does: doesn't it?"],
+  ["They haven't succeeded yet, ___?","have they","haven't they","did they","Negative present perfect → positive tag with have: have they?"],
+  ["Breaking a mirror is unlucky, ___?","isn't it","doesn't it","is it","Positive sentence with is → negative tag: isn't it?"],
+  ["You wouldn't have gone to the wedding without me, ___?","would you","wouldn't you","had you","Negative sentence with would → positive tag: would you?"],
+  ["I'm invited to the festival, ___?","aren't I","am not I","isn't I","Special form: I am … → aren't I?"]
+];
+
+const VOCAB = [
+  ["Many people believe that Friday the 13th is an ___ day.","unlucky","traditional","amazed","Unlucky = bringing bad luck."],
+  ["A ___ is the formal event when two people get married.","wedding","festival","hunt","A wedding is a marriage ceremony and its celebration."],
+  ["Music festivals ___ people from many different countries.","bring together","belong to","hunt","Bring together = unite people in one place."],
+  ["Thousands of people ___ in the carnival parade every year.","take part","succeed","produce","Take part (in) = participate."],
+  ["Scientists are still looking for a ___ for this disease.","cure","ceremony","guest","A cure is a medicine or treatment that makes a sick person healthy."],
+  ["I was ___ by the fireworks. I had never seen anything so beautiful.","amazed","unlucky","traditional","Amazed = very surprised and impressed."]
+];
+
+const PASSAGE = {
+  title:"The village festival",
+  paras:[
+    "Every August, the small village of San Lucas organizes a traditional festival that brings together three generations of families. The festival began more than a hundred years ago, when farmers celebrated the end of a good harvest.",
+    "Last year, Marta, a journalist, visited the village. \"I was amazed by the ceremony,\" she wrote. \"Everyone took part, from children to grandparents. If I hadn't come, I would never have understood how important this tradition is for the society here.\"",
+    "Not everything went well, though. On the first day it rained so much that the dance had to be cancelled. Some older guests said it was unlucky to start the festival on a Friday. \"If the organizers had listened to the old superstition, it wouldn't have rained,\" one of them joked. \"You don't really believe that, do you?\" Marta asked him. He laughed and said, \"Not really, but it's part of the magic.\""
+  ]
+};
+const READING = [
+  ["Why did the festival begin?","To celebrate the end of a good harvest.","To celebrate a wedding.","To protect the village from bad luck.","\"Farmers celebrated the end of a good harvest.\""],
+  ["Marta wrote: \"If I hadn't come, I would never have understood…\" What does this mean?","She came and understood how important the tradition is.","She didn't come to the festival.","She didn't understand the tradition.","Third conditional = the opposite of reality: she came, so she understood."],
+  ["What happened on the first day?","The dance was cancelled because of the rain.","The guests didn't arrive.","The ceremony was cancelled because it was Friday.","\"It rained so much that the dance had to be cancelled.\""],
+  ["\"You don't really believe that, do you?\" What answer does Marta expect?","That he doesn't believe it.","That he believes it completely.","That he will leave the festival.","A negative sentence with a positive tag expects a negative answer."]
+];
+
+const LISTENING = [
+  {say:"If I had known about the festival, I would have taken part.",q:["Did the speaker take part in the festival?","No, because he didn't know about it.","Yes, he took part.","He organized the festival.","Third conditional = the opposite of reality: he didn't know, so he didn't take part."]},
+  {say:"You're coming to the wedding on Saturday, aren't you?",q:["What does the speaker expect?","That the listener is coming to the wedding.","That the listener is not coming.","That the wedding was cancelled.","Positive sentence + negative tag: the speaker expects \"yes\"."]},
+  {say:"If they hadn't protected the forest, many animals would have disappeared.",q:["What really happened?","They protected the forest and the animals survived.","Many animals disappeared.","Nobody protected the forest.","Third conditional = the opposite of reality."]},
+  {say:"She didn't bring a gift, did she?",q:["What does the speaker think?","She didn't bring a gift.","She brought an expensive gift.","She forgot about the party.","Negative sentence + positive tag: the speaker believes she didn't bring one."]}
+];
+
+const WRITING = [
+  ["Write the question tag.","You've been to a traditional ceremony, ___?",["haven't you","have you not"],"Positive present perfect → negative tag: haven't you?"],
+  ["Write the question tag.","Nobody believes in that superstition, ___?",["do they"],"Nobody is negative, so the tag is positive, and we use they: do they?"],
+  ["Complete with the correct form of the verb in brackets.","If we had left earlier, we ___ the beginning of the ceremony. (not miss)",["wouldn't have missed","would not have missed"],"Unreal past result: wouldn't have + past participle."],
+  ["Complete with the correct form of the verb in brackets.","If she ___ harder, she would have succeeded. (study)",["had studied"],"Unreal past condition: if + had + past participle."]
+];
+
+const PARTS = [
+  {id:"A", short:"Grammar", title:"Part A · Choose the best answer", note:"Read each sentence carefully and choose the option that completes it correctly."},
+  {id:"B", short:"Vocabulary", title:"Part B · Vocabulary", note:"Choose the word or expression that completes each sentence."},
+  {id:"C", short:"Reading", title:"Part C · Reading", note:"Read the text and answer the questions."},
+  {id:"D", short:"Listening", title:"Part D · Listening", note:"Press Play to hear each sentence. You can listen as many times as you need. Turn your sound on."},
+  {id:"E", short:"Writing", title:"Part E · Writing", note:"Type only the missing words. Contractions like haven't are accepted."}
+];
+
+function rng(seed){seed=seed%2147483648;return function(){seed=(seed*1103515245+12345)%2147483648;return seed/2147483648}}
+function shuffle(arr,seed){const r=rng(seed+7);const a=arr.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;')}
+function stemHTML(s){return esc(s).replace('___','<span class="blank" aria-label="blank"></span>')}
+
+const LIMIT_MS=30*60*1000;
+const MAX_LEAVES=3;
+const KEY='english02-third-tags-v1';
+function load(){try{return JSON.parse(localStorage.getItem(KEY))}catch(e){return null}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+let state=load();
+const SEED=(state&&state.seed)||Math.floor(Math.random()*1e9);
+
+const quiz=document.getElementById('quiz');
+const ALL=[];let n=0;
+
+// Each question gets a stable key (its position in the bank) so saved answers survive a reload.
+function mcBlock(q,part,key,extraTop,extraWhy){
+  n++;
+  const stem=q[0],expl=q[q.length-1],correct=q[1],opts=shuffle(q.slice(1,-1),SEED+key.length*97+n*31);
+  const id='q_'+key;ALL.push({id,part,kind:'mc',correct});
+  const div=document.createElement('div');div.className='q';div.id='box-'+id;
+  div.innerHTML=`<div class="stem"><span class="num">${String(n).padStart(2,'0')}</span><p>${stemHTML(stem)}</p></div>
+    <div class="indent">${extraTop||''}
+    <div class="opts" role="radiogroup" aria-label="Question ${n}">${opts.map((o,i)=>`
+      <label class="opt" for="${id}-${i}"><input type="radio" id="${id}-${i}" name="${id}" value="${esc(o)}"><span>${String.fromCharCode(97+i)}) ${esc(o)}</span></label>`).join('')}
+    </div>
+    <p class="why"><b>Answer: ${esc(correct)}</b> ${esc(expl)}${extraWhy||''}</p></div>`;
+  return div;
+}
+function textBlock(w,part,key){
+  n++;
+  const [instr,sentence,accepted,expl]=w;const id='q_'+key;
+  ALL.push({id,part,kind:'text',accepted});
+  const div=document.createElement('div');div.className='q';div.id='box-'+id;
+  div.innerHTML=`<div class="stem"><span class="num">${String(n).padStart(2,'0')}</span><p><i>${esc(instr)}</i><br>${stemHTML(sentence)}</p></div>
+    <div class="indent write"><label for="${id}">Missing words</label><input type="text" id="${id}" name="${id}" spellcheck="false" autocapitalize="off" autocorrect="off">
+    <p class="why"><b>Answer: ${esc(accepted.join(' / '))}</b> ${esc(expl)}</p></div>`;
+  return div;
+}
+function sectionFor(p){
+  const sec=document.createElement('section');sec.className='part';
+  sec.innerHTML=`<div class="part-head"><h2>${p.title}</h2><p>${p.note}</p></div>`;
+  quiz.appendChild(sec);return sec;
+}
+const idx=a=>a.map((q,i)=>[q,i]);
+
+let sec=sectionFor(PARTS[0]);
+shuffle(idx(GRAMMAR),SEED+1).forEach(([q,i])=>sec.appendChild(mcBlock(q,"A","g"+i)));
+sec=sectionFor(PARTS[1]);
+shuffle(idx(VOCAB),SEED+2).forEach(([q,i])=>sec.appendChild(mcBlock(q,"B","i"+i)));
+sec=sectionFor(PARTS[2]);
+const ps=document.createElement('article');ps.className='passage';
+ps.innerHTML=`<h3>${esc(PASSAGE.title)}</h3>`+PASSAGE.paras.map(p=>`<p>${esc(p)}</p>`).join('');
+sec.appendChild(ps);
+shuffle(idx(READING),SEED+3).forEach(([q,i])=>sec.appendChild(mcBlock(q,"C","r"+i)));
+sec=sectionFor(PARTS[3]);
+const noSpeech=!('speechSynthesis' in window);
+if(noSpeech){const w=document.createElement('p');w.className='notice';w.textContent='Audio is not available in this browser. Try Chrome, Edge or Safari, or ask your teacher to read the sentences aloud.';sec.appendChild(w)}
+shuffle(idx(LISTENING),SEED+4).forEach(([L,i])=>{
+  const top=`<div class="audio"><button type="button" class="ghost" data-say="${i}" data-rate="0.95">▶ Play</button><button type="button" class="ghost" data-say="${i}" data-rate="0.75">▶ Slower</button><span class="plays" id="plays-${i}"></span></div>`;
+  sec.appendChild(mcBlock(L.q,"D","l"+i,top,`<br><i>Audio: "${esc(L.say)}"</i>`));
+});
+sec=sectionFor(PARTS[4]);
+shuffle(idx(WRITING),SEED+5).forEach(([w,i])=>sec.appendChild(textBlock(w,"E","w"+i)));
+
+// Speech
+let voice=null;
+function pickVoice(){if(noSpeech)return;const vs=speechSynthesis.getVoices();voice=vs.find(v=>/^en[-_]US/i.test(v.lang))||vs.find(v=>/^en/i.test(v.lang))||null}
+if(!noSpeech){pickVoice();speechSynthesis.onvoiceschanged=pickVoice}
+const playCount={};
+quiz.addEventListener('click',e=>{
+  const b=e.target.closest('button[data-say]');if(!b||noSpeech||(state&&state.graded))return;
+  const i=+b.dataset.say;
+  try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(LISTENING[i].say);u.lang='en-US';u.rate=+b.dataset.rate;if(voice)u.voice=voice;speechSynthesis.speak(u)}catch(err){}
+  playCount[i]=(playCount[i]||0)+1;
+  document.getElementById('plays-'+i).textContent=`played ${playCount[i]}×`;
+});
+
+// Block copy, paste and the context menu inside the questions
+['copy','cut','paste','drop','contextmenu','dragstart'].forEach(ev=>quiz.addEventListener(ev,e=>{e.preventDefault();if(ev==='paste'||ev==='drop')toast('Paste is not allowed. Type your answer.')}));
+document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&['c','x','a','p','s','u'].includes(e.key.toLowerCase())&&!e.target.closest('#studentForm')&&!e.target.closest('.copytext'))e.preventDefault()});
+
+function norm(s){
+  s=s.toLowerCase().replace(/[’‘`´]/g,"'").trim();
+  s=s.replace(/\bwon't\b/g,'will not').replace(/\bcan't\b/g,'cannot').replace(/n't\b/g,' not')
+     .replace(/(\w)'ll\b/g,'$1 will').replace(/(\w)'d\b/g,'$1 would');
+  return s.replace(/[^a-z' ]/g,' ').replace(/\s+/g,' ').trim();
+}
+
+const $=id=>document.getElementById(id);
+const fill=$('fill'),count=$('count'),notice=$('notice'),result=$('result'),timerEl=$('timer'),leavesEl=$('leaves');
+let warned=false,tickId=null,toastId=null;
+function toast(msg){const t=$('toast');t.textContent=msg;t.hidden=false;clearTimeout(toastId);toastId=setTimeout(()=>t.hidden=true,3500)}
+
+function answerOf(q){
+  if(q.kind==='mc'){const el=quiz.querySelector(`input[name="${q.id}"]:checked`);return el?el.value:null}
+  const v=$(q.id).value.trim();return v?v:null;
+}
+function progress(){const a=ALL.filter(q=>answerOf(q)!==null).length;fill.style.width=(a/ALL.length*100)+'%';count.textContent=`${a} / ${ALL.length} answered`;return a}
+function touched(e){
+  if(!state||state.graded)return;
+  const t=e.target;if(t.name&&t.name.startsWith('q_')){state.answers[t.name]=t.type==='radio'?t.value:t.value;save()}
+  progress();const box=t.closest('.q');box&&box.classList.remove('missing');
+}
+quiz.addEventListener('change',touched);quiz.addEventListener('input',touched);
+quiz.addEventListener('submit',e=>e.preventDefault());
+
+function fmt(ms){ms=Math.max(0,ms);const s=Math.round(ms/1000);return `${Math.floor(s/60)} min ${String(s%60).padStart(2,'0')} s`}
+function tick(){
+  if(!state||state.graded)return;
+  const left=LIMIT_MS-(Date.now()-state.startedAt);
+  if(left<=0){timerEl.textContent='00:00';grade('time');return}
+  const s=Math.ceil(left/1000);
+  timerEl.textContent=`${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+  timerEl.classList.toggle('low',left<5*60*1000);
+}
+function showLeaves(){leavesEl.textContent=`Left page: ${state.leaves} / ${MAX_LEAVES}`;leavesEl.classList.toggle('flag',state.leaves>0)}
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='hidden'&&state&&!state.graded){state.leaves++;save();showLeaves();if(state.leaves>=MAX_LEAVES)grade('leaves')}
+  else if(document.visibilityState==='visible'&&state&&!state.graded&&state.leaves>0){toast(state.leaves===MAX_LEAVES-1?`Last warning: you left the page ${state.leaves} times. If you leave again, the test closes.`:`You left the test page (${state.leaves} of ${MAX_LEAVES}). If you leave ${MAX_LEAVES} times, the test closes.`);tick()}
+});
+
+function openTest(){
+  $('gate').hidden=true;quiz.hidden=false;$('bar').hidden=false;$('actions').hidden=false;
+  $('sname').disabled=true;$('sgroup').disabled=true;
+  showLeaves();tick();tickId=setInterval(tick,1000);
+}
+function restoreAnswers(){
+  for(const [name,val] of Object.entries(state.answers||{})){
+    const radios=quiz.querySelectorAll(`input[name="${name}"]`);
+    if(radios.length&&radios[0].type==='radio'){radios.forEach(r=>{if(r.value===val)r.checked=true})}
+    else{const el=$(name);if(el)el.value=val}
+  }
+}
+
+$('startBtn').addEventListener('click',()=>{
+  const name=$('sname').value.trim(),group=$('sgroup').value.trim();
+  if(name.length<3){$('gateNotice').textContent='Write your full name before you start.';$('gateNotice').hidden=false;$('sname').focus();return}
+  state={seed:SEED,startedAt:Date.now(),leaves:0,name,group,answers:{},graded:false};save();
+  openTest();window.scrollTo({top:$('bar').offsetTop-8,behavior:'smooth'});
+});
+
+$('check').addEventListener('click',()=>{
+  const answered=progress();
+  if(answered<ALL.length&&!warned){
+    warned=true;
+    ALL.forEach(q=>{if(answerOf(q)===null)$('box-'+q.id).classList.add('missing')});
+    const left=ALL.length-answered;
+    notice.textContent=`You have ${left} unanswered question${left===1?'':'s'} (marked with a dashed border). Press Check again to finish anyway. You cannot change your answers after that.`;
+    notice.hidden=false;
+    const first=quiz.querySelector('.q.missing');first&&first.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  grade('student');
+});
+
+function grade(byTime,restoring){
+  if(!restoring){state.graded=true;state.finishedAt=Math.min(Date.now(),state.startedAt+LIMIT_MS);state.endedBy=byTime;save()}
+  clearInterval(tickId);notice.hidden=true;
+  try{speechSynthesis.cancel()}catch(e){}
+  const per={};let total=0;
+  ALL.forEach(q=>{
+    per[q.part]=per[q.part]||{ok:0,n:0};per[q.part].n++;
+    const box=$('box-'+q.id);const a=answerOf(q);
+    box.classList.remove('missing');box.classList.add('graded');
+    let ok;
+    if(q.kind==='mc'){
+      ok=a===q.correct;
+      box.querySelectorAll('.opt').forEach(l=>{const inp=l.querySelector('input');inp.disabled=true;
+        if(inp.value===q.correct)l.classList.add('is-right');else if(inp.checked)l.classList.add('is-picked-wrong')});
+    }else{
+      ok=a!==null&&q.accepted.some(x=>norm(x)===norm(a));
+      $(q.id).disabled=true;
+    }
+    if(ok){total++;per[q.part].ok++}
+    box.classList.add(ok?'correct':'wrong');
+  });
+  quiz.querySelectorAll('button[data-say]').forEach(b=>b.disabled=true);
+  const pct=Math.round(total/ALL.length*100);
+  const nota=(Math.round(total/ALL.length*5*10)/10).toFixed(1);
+  const used=fmt(state.finishedAt-state.startedAt);
+  const finished=new Date(state.finishedAt).toLocaleString('en-GB',{dateStyle:'medium',timeStyle:'short'});
+  const parts=PARTS.map(p=>`${p.short} ${per[p.id].ok}/${per[p.id].n}`).join(' · ');
+  const text=[
+    'Third conditional & tag questions – Teacher Jean Ramos - English 02',
+    `Student: ${state.name}${state.group?' | Group: '+state.group:''}`,
+    `Grade: ${nota} / 5.0 (${total} of ${ALL.length} correct)`,
+    parts,
+    `Time used: ${used} of 30 min${state.endedBy==='time'?' (time ran out)':''}${state.endedBy==='leaves'?' (TEST CLOSED: left the page 3 times)':''}`,
+    `Left the test page: ${state.leaves} time${state.leaves===1?'':'s'}`,
+    `Finished: ${finished}`
+  ].join('\n');
+  result.innerHTML=`${state.endedBy==='leaves'?'<p class="notice"><b>Your test was closed because you left the page 3 times.</b> It was graded with the answers you had.</p>':''}<div class="eyebrow">Result</div>
+    <div class="score"><span class="big">${nota}</span><span class="pct">/ 5.0 · ${total} of ${ALL.length} correct</span></div>
+    <div class="breakdown">${PARTS.map(p=>`<div>${p.short}<strong>${per[p.id].ok} / ${per[p.id].n}</strong></div>`).join('')}</div>
+    <pre class="copytext" id="copytext">${esc(text)}</pre>
+    <div class="gate"><button type="button" class="primary" id="copyBtn">Copy result</button><span class="meta" id="copyMsg"></span></div>
+    <ol class="send"><li>Press <b>Copy result</b>.</li><li>Open the evidence form and paste your result there.</li></ol>
+    <div class="gate"><a class="formbtn" href="https://forms.gle/yd3oEZx2YRTPTuLJ8" target="_blank" rel="noopener">Open the evidence form ↗</a></div>
+    <div class="meta">Form link: <span class="formurl">https://forms.gle/yd3oEZx2YRTPTuLJ8</span></div>
+    <div class="meta">Then scroll up to see the right answer and an explanation under every question.</div>`;
+  result.hidden=false;
+  $('check').disabled=true;$('timer').textContent=state.endedBy==='time'?'Time up':state.endedBy==='leaves'?'Closed':'Done';
+  $('copyBtn').addEventListener('click',()=>{
+    const pre=$('copytext');
+    const selectIt=()=>{const r=document.createRange();r.selectNodeContents(pre);const s=getSelection();s.removeAllRanges();s.addRange(r);$('copyMsg').textContent='Text selected. Copy it with your device (Ctrl+C or long press).'};
+    try{navigator.clipboard.writeText(text).then(()=>{$('copyMsg').textContent='Copied. Now paste it and send it.'},selectIt)}catch(e){selectIt()}
+  });
+  if(!restoring)result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// Restore an attempt in progress or finished
+if(state&&state.startedAt){
+  $('sname').value=state.name||'';$('sgroup').value=state.group||'';
+  restoreAnswers();openTest();progress();
+  if(state.graded)grade(state.endedBy,true);
+}
+</script>
+
+</body>
+</html>
